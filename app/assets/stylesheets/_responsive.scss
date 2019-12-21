@@ -1,0 +1,79 @@
+@import "./common/variables";
+
+@media screen and (max-width: 1024px) {
+  //---------------------- Header ---------------------------//
+  .header__inner {
+    &--signup, &--login {
+      display: none;
+    }
+  }
+
+  //---------------------- Jumbotron ---------------------------//
+  .jumbotron {
+    &__inner {
+      height: 150px;
+      width: 500px;
+      &--light {
+        position: absolute;
+        top: -17%;
+        left: -7.5%;
+        width: 90px;
+        height: auto;
+        transform-origin: bottom;
+        animation: light 2.5s linear infinite;
+      }
+      &--logo-none {
+        width: 500px;
+        top: 60%;
+      }
+    }
+    .lead {
+      font-size: 2.3rem;
+      line-height: 3.5rem;
+      br {
+        display: inline!important;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+  //---------------------- Header ---------------------------//
+
+  //---------------------- Sidebar ---------------------------//
+  .sidebar {
+    width: 100vw;
+    transform: translateX(-100vw);
+  }
+  //---------------------- Jumbotron ---------------------------//
+  .jumbotron {
+    &__inner {
+      width: 500px;
+      &--light {
+        position: absolute;
+        top: 1%;
+        left: 8.9%;
+        width: 70px;
+        height: auto;
+        transform-origin: bottom;
+        animation: light 2.5s linear infinite;
+      }
+      &--logo-none {
+        width: 350px;
+        top: 60%;
+      }
+    }
+    .lead {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+    }
+  }
+
+
+}
