@@ -1,24 +1,9 @@
 .top-page
   // ヘッダー
-  %header.header
-    .header__inner
-      .menu-trigger
-        %span
-        %span
-        %span
-      = image_tag '/assets/logo-light.png', class: 'header__logo'
-      .header__inner--signup
-        新規登録
-      .header__inner--login
-        ログイン
+  = render 'component/header'
 
   // サイドバー
-  .sidebar
-    %nav
-      %ul.global-nav
-        %li ideaSpaceとは？
-        %li 新着アイデア
-        %li 人気アイデア
+  = render 'component/sidebar'
 
   // ジャンボトロン
   .jumbotron
@@ -30,7 +15,7 @@
         あなたのアイデアを、
         %br
         投稿してみませんか？
-      %button 投稿する
+      %button.btn.btn-accent 投稿する
 
   // 新着アイデア
   %main
@@ -123,5 +108,12 @@
                   = icon 'fas', 'share-alt'
                 .btn-box__like-btn
                   = icon 'fas', 'heart'
+
+        = link_to ideas_path do
+          %button.btn.btn-accent
+            もっと見る
+
+
+
   %footer.footer
     = image_tag '/assets/logo-light.png', class: 'footer__logo'
