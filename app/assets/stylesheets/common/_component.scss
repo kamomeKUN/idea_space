@@ -25,6 +25,16 @@
 .posts-wrapper {
   padding: 7rem 0;
   text-align: center;
+  #slide {
+    margin-top: 1.5rem;
+    display: none;
+    img {
+      animation: Flashing 1.6s infinite linear;
+      display: block;
+      width: 250px;
+      height: auto;
+    }
+  }
   &__title {
     position: relative;
     letter-spacing: .2rem;
@@ -50,5 +60,17 @@
       height: 2px;
       background: #333;
     }
+  }
+}
+
+@keyframes Flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
