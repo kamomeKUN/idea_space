@@ -3,6 +3,14 @@ class IdeasController < ApplicationController
   end
 
   def index
-    
+
   end
+
+  def newlist
+
+  end
+
+  def popular
+  end
+  
 end

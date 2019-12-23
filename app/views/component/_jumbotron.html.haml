@@ -1,0 +1,11 @@
+.jumbotron
+  .container
+    .jumbotron__inner
+      = image_tag '/assets/light.png', class: 'jumbotron__inner--light'
+      = image_tag '/assets/logo-none.png', class: 'jumbotron__inner--logo-none'
+    %h1.lead
+      あなたのアイデアを、
+      %br
+      投稿してみませんか？
+    = link_to '見てみる', ideas_path, class: 'btn btn-sub mr-5'
+    = link_to '投稿する', ideas_path, class: 'btn btn-accent'

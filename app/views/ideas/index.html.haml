@@ -1,6 +1,26 @@
+// ヘッダー
+= render 'component/header'
+
+.index-top
+  .container
+    %h1
+      アイデアを投稿すると、
+      %br
+      ポイントがたまるよ！
+    = link_to '投稿する', root_path, class: 'btn btn-accent'
+    = image_tag '/assets/index-top'
+
+
+
+
+%main
 .contents-wrapper
-  // ヘッダー
-  = render 'component/header'
 
   // サイドバー
   = render 'component/sidebar'
+
+  // 新着アイデア
+  = render 'component/new-posts'
+
+  // 人気アイデア
+  = render 'component/popular-posts'

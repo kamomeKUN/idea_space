@@ -1,4 +1,5 @@
 $(function() {
+  // ハンバーガーメニュー
   let hamburger = $('.menu-trigger');
   let sidebar = $('.sidebar');
   hamburger.click(function() {

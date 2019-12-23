@@ -2,16 +2,53 @@
 
 // ボタン
 .btn {
+  line-height: 35px;
+  display: inline-block;
+  width: 250px;
   margin-top: 3rem;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   outline: none;
   border: none;
-  border-radius: 30px;
+  border-radius: 40px;
   color: $white;
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 .btn-accent {
-  background: linear-gradient(to right, #ffac05, $accent);
+  background: linear-gradient(to right, $accent, #ffce3b);
+}
+.btn-sub {
+  background: linear-gradient(to right, $sub, #4288cf);
+}
+
+// 見出し
+.posts-wrapper {
+  padding: 7rem 0;
+  text-align: center;
+  &__title {
+    position: relative;
+    letter-spacing: .2rem;
+    font-size: 2.3rem;
+    .far, .fas, .fab {
+      font-size: 3rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60%;
+      left: .8rem;
+      width: 350px;
+      height: 2px;
+      background: #333;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 60%;
+      right: .8rem;
+      width: 350px;
+      height: 2px;
+      background: #333;
+    }
+  }
 }
