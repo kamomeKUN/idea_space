@@ -1,9 +1,10 @@
 // ヘッダー
 = render 'component/header'
-
+// サイドバー
+= render 'component/sidebar'
 %main
   .contents-wrapper
-    .posts-wrapper.idea-form
+    .posts-wrapper
       .container
         %h2.posts-wrapper__title
           = icon 'fas', 'brain'
@@ -19,4 +20,6 @@
             %h3 カテゴリ
             = f.select :number, @categories, prompt: "-----"
           .form-section
-            %input{type: 'submit'}
+            = f.submit '投稿する'
+// フッター
+= render 'component/footer'

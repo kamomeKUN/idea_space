@@ -6,7 +6,9 @@
       %span
     = link_to root_path do
       = image_tag '/assets/logo-light.png', class: 'header__logo'
-    .header__inner--signup
-      新規登録
-    .header__inner--login
-      ログイン
+    - if user_signed_in?
+      = link_to current_user.name, root_path, class: 'header__inner--login header__inner--user-name'
+      = link_to 'ログアウト', destroy_user_session_path, method: 'DELETE', class: 'header__inner--signup'
+    - else
+      = link_to 'ログイン', new_user_session_path, class: 'header__inner--login'
+      = link_to '新規登録', new_user_registration_path, class: 'header__inner--signup'

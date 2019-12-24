@@ -77,7 +77,7 @@
 
 @media screen and (max-width: 500px) {
   //---------------------- Common ---------------------------//
-  .btn {
+  .btn, .form-section input[type='submit'] {
     padding: .5rem 3rem;
   }
   .mr-5 {
