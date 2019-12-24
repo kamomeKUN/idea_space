@@ -33,6 +33,6 @@
             = f.password_field :password_confirmation, autocomplete: "new-password"
           .form-section
             = f.submit "登録する"
-        = link_to "ログイン", new_session_path(resource_name), class: 'btn btn-sub mt-1'
+        = render "devise/shared/links"
 // フッター
 = render 'component/footer'

@@ -94,6 +94,9 @@ h6 {
 .mt-1 {
   margin-top: 1rem;
 }
+.mt-3 {
+  margin-top: 3rem;
+}
 .mr-3 {
   margin-right: 3rem;
 }
@@ -106,4 +109,8 @@ h6 {
 // パディング
 .pt-0 {
   padding-top: 0!important;
+}
+// ディスプレイ
+.inline-block {
+  display: inline-block;
 }
