@@ -1,0 +1,22 @@
+// ヘッダー
+= render 'component/header'
+
+%main
+  .contents-wrapper
+    .posts-wrapper.idea-form
+      .container
+        %h2.posts-wrapper__title
+          = icon 'fas', 'brain'
+          アイデア投稿
+        = form_with model: @idea, local: true do |f|
+          .form-section
+            %h3 タイトル
+            = f.text_field :title
+          .form-section
+            %h3 どんなアイデア？
+            = f.text_area :content
+          .form-section
+            %h3 カテゴリ
+            = f.select :number, @categories, prompt: "-----"
+          .form-section
+            %input{type: 'submit'}

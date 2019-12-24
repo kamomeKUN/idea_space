@@ -61,6 +61,13 @@
     }
   }
 
+  //---------------------- Ideas#New ---------------------------//
+  .form-section {
+    input, textarea {
+      width: 80%;
+    }
+  }
+
 }
 
 
@@ -164,6 +171,12 @@
     }
     .btn {
       margin-top: 1.5rem;
+    }
+  }
+  //---------------------- Ideas#New ---------------------------//
+  .form-section {
+    input, textarea {
+      width: 100%;
     }
   }
 
