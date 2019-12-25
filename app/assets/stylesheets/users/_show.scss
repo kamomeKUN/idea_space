@@ -1,0 +1,40 @@
+@import '../common/variables';
+.user-top {
+  position: relative;
+  text-align: center;
+  padding: 180px 0 2rem;
+  width: 100%;
+  height: auto;
+  background-color: $sub;
+  img {
+    margin-left: 1.5rem;
+    border: 5px solid $accent;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  h1 {
+    margin: 1rem 0 0 1.5rem;
+    font-size: 1.4rem;
+    color: $white;
+  }
+  ul {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    li {
+      .number {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        color: $white;
+      }
+      p {
+        margin-top: .5rem;
+        font-size: 1.4rem;
+        color: $white;
+      }
+    }
+  }
+}

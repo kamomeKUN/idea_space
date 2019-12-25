@@ -1,0 +1,19 @@
+// ヘッダー
+= render 'component/header'
+// サイドバー
+= render 'component/sidebar'
+
+.user-top
+  .container
+    = image_tag @user.image.url
+    %h1
+      = @user.name
+    %ul
+      %li
+        .number 40
+        %p フォロー
+      %li
+        .number 1280
+        %p フォロワー
+      %li
+        %p いいね
