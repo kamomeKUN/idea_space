@@ -1,9 +1,15 @@
 class IdeasController < ApplicationController
+
   def top
+    @ideas = Idea.all
   end
 
   def index
+    @ideas = Idea.all
+  end
 
+  def show
+    
   end
 
   def newlist
@@ -31,6 +37,6 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :content)
+    params.require(:idea).permit(:title, :content).merge(user_id: current_user.id)
   end
 end

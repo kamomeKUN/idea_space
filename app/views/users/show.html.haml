@@ -5,10 +5,14 @@
 
 .user-top
   .container
-    = image_tag @user.image.url
+    .user-top__img-wrap
+      .likes-count
+        %p 90
+        = icon 'far', 'heart'
+      = image_tag @user.image.url
     %h1
       = @user.name
-    %ul
+    %ul.status-list
       %li
         .number 40
         %p フォロー
@@ -17,3 +21,4 @@
         %p フォロワー
       %li
         %p いいね
+= render 'component/my-posts'

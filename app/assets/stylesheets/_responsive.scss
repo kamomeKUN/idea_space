@@ -7,6 +7,16 @@
       display: none;
     }
   }
+  .posts-wrapper, .my-posts-wrapper {
+    &__title {
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
 
   //---------------------- Jumbotron ---------------------------//
   .jumbotron {
@@ -36,18 +46,7 @@
     }
   }
 
-  //---------------------- Jumbotron ---------------------------//
-  .posts-wrapper {
-    &__title {
-      &:before {
-        display: none;
-      }
-      &:after {
-        display: none;
-      }
-    }
-  }
-  //
+  //---------------------- Ideas#Index ---------------------------//
   .index-top {
     h1 {
       line-height: 3rem;
@@ -68,10 +67,7 @@
     }
   }
 
-}
-
-
-
+}// End 1024px
 
 
 
@@ -86,7 +82,7 @@
   .header {
     font-size: 1rem;
   }
-  .posts-wrapper {
+  .posts-wrapper, .my-posts-wrapper {
     padding: 7rem 0;
     text-align: center;
     #slide {
@@ -100,6 +96,22 @@
         font-size: 2.7rem;
       }
     }
+  }
+  .card-wrapper {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vw);
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    display: flex;
+    margin: 1rem 0 0;
+  }
+
+  .card {
+    scroll-snap-align: center;
+    margin-right: .8rem;
+    width: calc(100vw - 1.6rem);
+    flex: none;
+    height: 400px;
   }
 
   //---------------------- Sidebar ---------------------------//
@@ -136,26 +148,7 @@
     }
   }
 
-
-
-  .card-wrapper {
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vw);
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    display: flex;
-    margin: 1rem 0 0;
-  }
-
-  .card {
-    scroll-snap-align: center;
-    margin-right: .8rem;
-    width: calc(100vw - 1.6rem);
-    flex: none;
-    height: 400px;
-  }
-
-  //---------------------- Index ---------------------------//
+  //---------------------- Ideas#Index ---------------------------//
   .index-top {
     padding-top: 130px;
     h1 {
@@ -180,5 +173,53 @@
     }
   }
 
+  //---------------------- Users#Show ---------------------------//
+  .user-top {
+    text-align: center;
+    padding: 180px 0 1rem;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, $sub, #5eaeff);;
+    &__img-wrap {
+      position: relative;
+      img {
+        border: 5px solid $accent;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .likes-count {
+        position: absolute;
+        top: -28%;
+        left: 50%;
+        transform: translateX(-50%);
+        p {
+          color: $white;
+          font-size: 1.2rem;
+        }
+        .fa-heart {
+          margin-top: 0.3rem;
+          color: $white;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .status-list {
+    margin-top: 3rem;
+    width: 90%;
+    li {
+      .number {
+        font-size: .9rem;
+      }
+      p {
+        font-size: .9rem;
+      }
+      &:first-of-type {
+        margin-left: .8rem;
+      }
+    }
+  }
 
-}
+}// End 500px
