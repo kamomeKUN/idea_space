@@ -12,6 +12,8 @@
       = image_tag @user.image.url
     %h1
       = @user.name
+      = icon 'fas', 'user-plus'
+      -# = icon 'fas', 'user-minus'
     %ul.status-list
       %li
         .number 40
