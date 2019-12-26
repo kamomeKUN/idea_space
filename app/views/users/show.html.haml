@@ -12,8 +12,9 @@
       = image_tag @user.image.url
     %h1
       = @user.name
-      = icon 'fas', 'user-plus'
+      -# = icon 'fas', 'user-plus'
       -# = icon 'fas', 'user-minus'
+    .point 所有ポイント : 800pt
     %ul.status-list
       %li
         .number 40
