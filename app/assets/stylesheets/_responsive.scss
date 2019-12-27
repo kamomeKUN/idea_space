@@ -67,6 +67,11 @@
     }
   }
 
+  //---------------------- Ideas#Show ---------------------------//
+  .idea-show {
+    width: 100%!important;
+  }
+
 }// End 1024px
 
 
@@ -104,6 +109,7 @@
     overflow-x: scroll;
     display: flex;
     margin: 1rem 0 0;
+    padding: 2.5rem .8em .8rem;
   }
 
   .card {
@@ -223,6 +229,22 @@
       }
       &:first-of-type {
         margin-left: .8rem;
+      }
+    }
+  }
+
+  //---------------------- Ideas#Show ---------------------------//
+  .idea-show {
+    height: auto!important;
+    &__top {
+      padding: 10px 10px 30px;
+      &--user-name {
+        display: inline-block;
+      }
+    }
+    &__bottom {
+      &--user-name {
+        display: none;
       }
     }
   }

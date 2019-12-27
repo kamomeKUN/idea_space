@@ -9,7 +9,8 @@ class IdeasController < ApplicationController
   end
 
   def show
-    
+    @idea = Idea.find(params[:id])
+    @user = User.find(@idea.user_id)
   end
 
   def newlist

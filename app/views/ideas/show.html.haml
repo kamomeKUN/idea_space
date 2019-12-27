@@ -4,5 +4,29 @@
 // サイドバー
 = render 'component/sidebar'
 
-.index-top
-  .container
+.post-wrapper
+  .container.px-1
+    .card.idea-show
+      .card__top.idea-show__top
+        %h1.card__top--title
+          タイトル
+        .card__top--text.idea-show__top--text
+          あいうえおあいうおえいあうえおあいうえおkahsgciuagsicugasoicgabkdjbvaiuocgakscvaguisいあえいうおあいえうおあいえうおあえいうお
+          .idea-show__top--user-name
+            = "投稿者 : #{@user.name}"
+      .card__bottom.idea-show__bottom
+        = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
+        .idea-show__bottom--user-name
+          = @user.name
+        .btn-box
+          .btn-box__share-btn
+            = icon 'fas', 'share-alt'
+          .btn-box__like-btn
+            = icon 'fas', 'heart'
+      .card__other
+        .card__other--comments
+          %p 24
+          = icon 'fas', 'comments'
+        .card__other--likes
+          %p 45
+          = icon 'fas', 'heart'
