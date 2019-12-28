@@ -26,13 +26,36 @@
             = icon 'fas', 'heart'
       .card__other
         .card__other--comments
-          %p 24
+          %p
+            = @idea.comments.count
           = icon 'fas', 'comments'
         .card__other--likes
           %p 45
           = icon 'fas', 'heart'
         .card__other--category
           = @idea.category
+
+
+.comments-wrapper
+  .container
+    %h2 コメント一覧
+    .comments-list
+      - @comments.each do |comment|
+        .comments-list__item
+          -case comment.user.avatar
+          -when 0 then
+            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
+          -when 1 then
+            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
+          -else
+            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
+          .comments-list__item--user-name
+            = "#{comment.user.name} :"
+          .comments-list__item--content
+            = comment.content
+          - if current_user.id == comment.user_id
+            .comments-list__item--destroy
+              = link_to '削除する', comment_path(comment.id), method: 'DELETE'
 
 
 

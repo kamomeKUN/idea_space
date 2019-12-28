@@ -11,6 +11,7 @@ class IdeasController < ApplicationController
   def show
     @idea = Idea.find(params[:id])
     @user = User.find(@idea.user_id)
+    @comments = @idea.comments.order(created_at: "DESC")
   end
 
   def newlist

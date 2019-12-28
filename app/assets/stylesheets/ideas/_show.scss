@@ -1,6 +1,6 @@
 @import '../common/variables';
 .post-wrapper {
-  padding: 7rem 0;
+  padding: 7rem 0 3rem;
   text-align: center;
   #slide {
     margin-top: 1.5rem;
@@ -81,5 +81,42 @@
     justify-content: space-around;
     align-items: center;
     width: 60%;
+  }
+}
+
+.comments-wrapper {
+  h2 {
+    text-align: center;
+  }
+}
+.comments-list {
+  width: 77%;
+  margin: 3rem auto;
+  height: auto;
+  &__item {
+    position: relative;
+    padding: 1.5rem 0;
+    border-bottom: 2px dashed $black;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    &--img {
+      width: 50px;
+      height: auto;
+    }
+    &--user-name {
+      margin-left: .5rem;
+      font-size: 1rem;
+    }
+    &--content {
+      margin-left: .5rem;
+      font-size: 1.2rem;
+    }
+    &--destroy {
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      font-size: .8rem;
+    }
   }
 }
