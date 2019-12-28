@@ -1,4 +1,3 @@
 class Idea < ApplicationRecord
-  has_many :idea_categories
-  has_many :categories, through: :idea_categories
+  belongs_to :user
 end

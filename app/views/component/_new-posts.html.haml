@@ -13,10 +13,17 @@
             .card__top--title
               = idea.title
             .card__top--text
-              = truncate(idea.content, length: 128)
+              = truncate(idea.content, length: 108)
+            .card__top--user-name
+              = "投稿者 : #{idea.user.name}"
           .card__bottom
-            = link_to user_path(idea.user_id) do
-              = image_tag current_user.image.url, class: 'card__bottom--user-icon'
+            -case idea.user.avatar
+            -when 0 then
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+            -when 1 then
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+            -else
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
             .btn-box
               .btn-box__share-btn
                 = icon 'fas', 'share-alt'
@@ -29,6 +36,8 @@
             .card__other--likes
               %p 45
               = icon 'fas', 'heart'
+            .card__other--category
+              = idea.category
 
     = link_to ideas_path do
       %button.btn.btn-accent

@@ -1,3 +1,4 @@
+@import '../common/variables';
 .post-wrapper {
   padding: 7rem 0;
   text-align: center;
@@ -36,13 +37,6 @@
     height: calc(100% - 100px)!important;
     &--text {
       margin: 1rem 0;
-    }
-    &--user-name {
-      display: none;
-      font-size: .9rem;
-      position: absolute;
-      right: 10px;
-      bottom: 5px;
     }
   }
   &__bottom {

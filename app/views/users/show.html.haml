@@ -9,12 +9,13 @@
       .likes-count
         %p 90
         = icon 'far', 'heart'
-      = image_tag @user.image.url
+      = image_tag @image
     %h1
       = @user.name
       -# = icon 'fas', 'user-plus'
       -# = icon 'fas', 'user-minus'
-    .point 所有ポイント : 800pt
+    .point
+      = "所有ポイント : #{@user.point}pt"
     %ul.status-list
       %li
         .number 40

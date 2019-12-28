@@ -9,11 +9,11 @@
     .card.idea-show
       .card__top.idea-show__top
         %h1.card__top--title
-          タイトル
+          = @idea.title
         .card__top--text.idea-show__top--text
-          あいうえおあいうおえいあうえおあいうえおkahsgciuagsicugasoicgabkdjbvaiuocgakscvaguisいあえいうおあいえうおあいえうおあえいうお
-          .idea-show__top--user-name
-            = "投稿者 : #{@user.name}"
+          = @idea.content
+          .card__top--user-name
+            = "投稿者 : #{@idea.user.name}"
       .card__bottom.idea-show__bottom
         = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
         .idea-show__bottom--user-name
@@ -30,3 +30,6 @@
         .card__other--likes
           %p 45
           = icon 'fas', 'heart'
+        .card__other--category
+          = @idea.category
+    = form_with 
