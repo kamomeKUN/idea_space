@@ -38,7 +38,9 @@
 
 .comments-wrapper
   .container
-    %h2 コメント一覧
+    %h2
+      = icon 'far', 'comments'
+      コメント一覧
     .comments-list
       - @comments.each do |comment|
         .comments-list__item
