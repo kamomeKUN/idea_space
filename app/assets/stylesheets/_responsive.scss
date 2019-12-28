@@ -71,6 +71,15 @@
   .idea-show {
     width: 100%!important;
   }
+  .comment-box {
+    top: 90px!important;
+    &__input {
+      width: 90%;
+    }
+    &__btn {
+      width: 90%;
+    }
+  }
 
 }// End 1024px
 
@@ -246,6 +255,11 @@
     height: auto!important;
     &__top {
       padding: 10px 10px 30px;
+    }
+  }
+  .comment-box {
+    &__btn {
+      flex-flow: column;
     }
   }
 

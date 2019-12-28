@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       get :popular
     end
   end
+  resources :comments
 end

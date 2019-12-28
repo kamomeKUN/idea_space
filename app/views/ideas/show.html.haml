@@ -1,3 +1,4 @@
+.overlay
 // ヘッダー
 = render 'component/header'
 
@@ -16,9 +17,9 @@
             = "投稿者 : #{@idea.user.name}"
       .card__bottom.idea-show__bottom
         = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-        .idea-show__bottom--user-name
-          = @user.name
         .btn-box
+          .btn-box__comment-btn
+            = icon 'fas', 'comment'
           .btn-box__share-btn
             = icon 'fas', 'share-alt'
           .btn-box__like-btn
@@ -32,4 +33,14 @@
           = icon 'fas', 'heart'
         .card__other--category
           = @idea.category
-    = form_with 
+
+
+
+= form_with url: comments_path, local: true, class: 'comment-box' do |f|
+  .container
+    %h2.comment-box__title コメントする
+    = f.text_area :content, class: 'comment-box__input'
+    = f.number_field :idea_id, value: @idea.id, type: 'hidden'
+    .comment-box__btn
+      = f.submit 'コメントする', class: 'comment-box__btn--comment btn btn-accent'
+      .comment-box__btn--close.btn.btn-sub 閉じる
