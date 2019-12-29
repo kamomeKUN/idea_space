@@ -39,6 +39,10 @@ class IdeasController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @ideas = Idea.where(category: params[:category])
+  end
+
 
   private
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :top
       get :newlist
       get :popular
+      get :search
     end
   end
   resources :comments, only:[:create, :destroy]
