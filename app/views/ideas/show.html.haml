@@ -18,26 +18,34 @@
       .card__bottom.idea-show__bottom
         = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
         .btn-box
-          .btn-box__comment-btn
+          - if current_user.id == @idea.user_id
+            = link_to idea_path(@idea.id), class: 'btn-box__destroy-btn btn-box__btn', method: 'DELETE' do
+              = icon 'fas', 'trash'
+          .btn-box__comment-btn.btn-box__btn
             = icon 'fas', 'comment'
-          .btn-box__share-btn
+          .btn-box__share-btn.btn-box__btn
             = icon 'fas', 'share-alt'
-          .btn-box__like-btn
-            = icon 'fas', 'heart'
+          - if current_user.likes.find_by(idea_id: @idea.id)
+            = link_to like_path(@idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+              = icon 'fas', 'heart', class: 'unlike'
+          - else
+            = link_to like_like_path(@idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+              = icon 'fas', 'heart'
       .card__other
         .card__other--comments
           %p
             = @idea.comments.count
           = icon 'fas', 'comments'
         .card__other--likes
-          %p 45
+          %p
+            = @idea.likes.count
           = icon 'fas', 'heart'
         .card__other--category
           = @idea.category
 
 
 .comments-wrapper
-  .container
+  .container.px-1
     %h2
       = icon 'far', 'comments'
       コメント一覧
@@ -62,7 +70,7 @@
 
 
 = form_with url: comments_path, local: true, class: 'comment-box' do |f|
-  .container
+  .container.px-1
     %h2.comment-box__title コメントする
     = f.text_area :content, class: 'comment-box__input'
     = f.number_field :idea_id, value: @idea.id, type: 'hidden'

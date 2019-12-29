@@ -73,14 +73,56 @@
   }
   .comment-box {
     &__input {
-      width: 90%;
+      width: 100%;
     }
     &__btn {
-      width: 90%;
+      width: 100%;
+    }
+  }
+  .comments-list {
+    width: 100%;
+    margin: 2.5rem auto;
+    height: auto;
+    &__item {
+      position: relative;
+      padding: 1.5rem 0;
+      border-bottom: 2px dashed $black;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      &--img {
+        width: 50px;
+        height: auto;
+      }
+      &--user-name {
+        margin-left: .5rem;
+        font-size: 1rem;
+      }
+      &--content {
+        margin-left: .5rem;
+        font-size: 1.2rem;
+      }
+      &--destroy {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: .8rem;
+      }
     }
   }
 
 }// End 1024px
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -132,6 +174,18 @@
       }
       &--text {
         font-size: 1rem;
+      }
+    }
+    &__bottom {
+      .btn-box {
+        &__btn {
+          margin-right: 0.5rem;
+          width: 45px;
+          height: 45px;
+        }
+        .fas {
+          font-size: 1.2rem;
+        }
       }
     }
   }

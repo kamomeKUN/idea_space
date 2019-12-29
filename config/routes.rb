@@ -10,5 +10,11 @@ Rails.application.routes.draw do
       get :popular
     end
   end
-  resources :comments
+  resources :comments, only:[:create, :destroy]
+
+  resources :likes, only:[:destroy] do
+    member do
+      post :like
+    end
+  end
 end

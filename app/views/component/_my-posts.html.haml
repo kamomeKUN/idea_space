@@ -7,96 +7,32 @@
       SLIDE
       = image_tag '/assets/slide'
     .card-wrapper
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
-              = icon 'fas', 'heart'
-        .card__other
-          .card__other--comments
-            %p 24
-            = icon 'fas', 'comments'
-          .card__other--likes
-            %p 45
-            = icon 'fas', 'heart'
-
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
+      - @ideas.each do |idea|
+        .card
+          = link_to idea_path(idea.id), class: 'card__top' do
+            .card__top--title
+              = idea.title
+            .card__top--text
+              = truncate(idea.content, length: 108)
+            .card__top--user-name
+              = "投稿者 : #{idea.user.name}"
+          .card__bottom
+            = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
+            .btn-box
+              .btn-box__share-btn.btn-box__btn
+                = icon 'fas', 'share-alt'
+              .btn-box__like-btn.btn-box__btn
+                = icon 'fas', 'heart'
+          .card__other
+            .card__other--comments
+              %p
+                = idea.comments.count
+              = icon 'fas', 'comments'
+            .card__other--likes
+              %p
+                = idea.likes.count
               = icon 'fas', 'heart'
 
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
-              = icon 'fas', 'heart'
-
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
-              = icon 'fas', 'heart'
-
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
-              = icon 'fas', 'heart'
-
-      .card
-        .card__top
-          .card__top--title
-            タイトル
-          .card__top--text
-            ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-        .card__bottom
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-          .btn-box
-            .btn-box__share-btn
-              = icon 'fas', 'share-alt'
-            .btn-box__like-btn
-              = icon 'fas', 'heart'
 
     = link_to ideas_path do
       %button.btn.btn-accent

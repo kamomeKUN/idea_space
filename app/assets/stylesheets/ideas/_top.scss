@@ -216,7 +216,7 @@
     .btn-box {
       display: flex;
       align-items: center;
-      &__share-btn, &__like-btn, &__comment-btn {
+      &__btn {
         position: relative;
         margin-right: 1rem;
         width: 50px;
@@ -226,7 +226,7 @@
         &:hover {
           opacity: .7;
         }
-        .fa-share-alt, .fa-heart, .fa-comment {
+        .fas {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -234,13 +234,19 @@
           font-size: 1.5rem;
           transform: translate(-50%, -50%);
         }
+        .unlike {
+          color: #E3008C;
+        }
       }
       &__like-btn {
-        margin-right: 0;
-        background-color: pink;
+        background: pink;
+        margin-right: 0!important;
       }
       &__comment-btn {
-        background-color: $sub;
+        background: $sub;
+      }
+      &__destroy-btn {
+        background: #f44336;
       }
     }
   }
