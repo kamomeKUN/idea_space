@@ -13,7 +13,9 @@
             .card__top--title
               = idea.title
             .card__top--text
-              = idea.content
+              = truncate(idea.content, length: 108)
+            .card__top--user-name
+              = "投稿者 : #{idea.user.name}"
           .card__bottom
             = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
             .btn-box

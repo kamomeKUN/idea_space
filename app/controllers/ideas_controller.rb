@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
 
   def index
     @ideas = Idea.all
+    @categories = ['webサイト', 'アプリ', 'ゲーム', '音楽', 'グルメ', '暮らし', 'ビジネス', 'オフライン', 'その他']
   end
 
   def show
@@ -43,5 +44,9 @@ class IdeasController < ApplicationController
 
   def idea_params
     params.require(:idea).permit(:title, :content, :category).merge(user_id: current_user.id)
+  end
+
+  def set_categories
+
   end
 end

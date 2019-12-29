@@ -17,6 +17,21 @@
 
 %main
 .contents-wrapper
+  .container.px-1
+    .search-title
+      検索
+      = icon 'fas', 'search-minus'
+      = icon 'fas', 'search-plus'
+    = form_with url: comments_path, local: true, class: 'search-form' do |f|
+      .search-form__select-wrap
+        = f.select :search, [['新着順', 0], ['人気順', 3],['コメント数順', 2]]
+        = icon 'fas', 'sort-down'
+      .search-form__select-wrap
+        = f.select :category, @categories
+        = icon 'fas', 'sort-down'
+      = f.submit '検索する', class: 'search-form__submit'
+
+
 
   // 新着アイデア
   = render 'component/new-posts'
