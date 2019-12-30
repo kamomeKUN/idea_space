@@ -1,0 +1,37 @@
+@import '../common/variables';
+.search-wrapper {
+  &__title {
+    &:before, &:after {
+      display: none!important;
+    }
+    .fa-search {
+      font-size: 2.2rem!important;
+    }
+  }
+}
+.pagination {
+  height: auto;
+  &__inner {
+    border-radius: 3px;
+    padding: 8px 0;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid gray;
+    span{
+      border-right: 1px solid gray;
+      padding: 8px;
+      color: $main;
+      > a {
+        color: $main;
+      }
+      &:last-of-type {
+        border: none;
+      }
+    }
+    .current {
+      background: $sub;
+      color: $white;
+    }
+  }
+
+}

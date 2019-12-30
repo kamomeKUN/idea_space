@@ -1,38 +1,7 @@
-.posts-wrapper.pt-0
-  .container
-    %h2.posts-wrapper__title
-      = icon 'fab', 'hotjar'
-      人気アイデア
-    #slide
-      SLIDE
-      = image_tag '/assets/slide'
-    .card-wrapper
-      - @ideas.each do |idea|
-        .card
-          = link_to idea_path(idea.id), class: 'card__top' do
-            .card__top--title
-              = idea.title
-            .card__top--text
-              = truncate(idea.content, length: 108)
-            .card__top--user-name
-              = "投稿者 : #{idea.user.name}"
-          .card__bottom
-            = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
-            .btn-box
-              .btn-box__share-btn.btn-box__btn
-                = icon 'fas', 'share-alt'
-              .btn-box__like-btn.btn-box__btn
-                = icon 'fas', 'heart'
-          .card__other
-            .card__other--comments
-              %p
-                = idea.comments.count
-              = icon 'fas', 'comments'
-            .card__other--likes
-              %p
-                = idea.likes.count
-              = icon 'fas', 'heart'
+// ヘッダー
+= render 'component/header'
+// サイドバー
+= render 'component/sidebar'
 
-    = link_to ideas_path do
-      %button.btn.btn-accent
-        もっと見る
+%main
+  = render 'component/search-posts'

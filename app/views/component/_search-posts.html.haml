@@ -1,8 +1,8 @@
-.posts-wrapper.pt-0
+.posts-wrapper.search-wrapper
   .container
-    %h2.posts-wrapper__title
-      = icon 'fab', 'hotjar'
-      人気アイデア
+    %h2.posts-wrapper__title.search-wrapper__title
+      = "\"#{@ideas_count}\"件の検索結果"
+      = icon 'fas', 'search'
     #slide
       SLIDE
       = image_tag '/assets/slide'
@@ -35,6 +35,8 @@
             .card__other--category
               = idea.category
 
+    = paginate @ideas
+
     = link_to ideas_path do
       %button.btn.btn-accent
-        もっと見る
+        戻る

@@ -1,4 +1,5 @@
 $(function() {
+  // 検索フォーム
   let searchForm  = $('.search-form');
   let searchTitle = $('.search-title');
   let searchPlus  = $('.fa-search-plus');
@@ -18,4 +19,11 @@ $(function() {
     }
   });
 
+
+  // indexページ新着
+  let postsWrap = $('.posts-wrapper');
+  let path      = location.pathname
+  if(path === '/ideas') {
+    postsWrap.css('padding', '3rem 0 5rem');
+  };
 });

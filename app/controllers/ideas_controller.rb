@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_action :set_categories, only:[:index, :new, :search]
 
   def top
     @ideas = Idea.all
@@ -6,7 +7,6 @@ class IdeasController < ApplicationController
 
   def index
     @ideas = Idea.all
-    @categories = ['webサイト', 'アプリ', 'ゲーム', '音楽', 'グルメ', '暮らし', 'ビジネス', 'オフライン', 'その他']
   end
 
   def show
@@ -24,7 +24,6 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
-    @categories = ['webサイト', 'アプリ', 'ゲーム', '音楽', 'グルメ', '暮らし', 'ビジネス', 'オフライン', 'その他']
   end
 
   def create
@@ -40,7 +39,8 @@ class IdeasController < ApplicationController
   end
 
   def search
-    @ideas = Idea.where(category: params[:category])
+    @ideas = Idea.where(category: params[:category]).page(params[:page]).per(6)
+    @ideas_count = Idea.where(category: params[:category]).count
   end
 
 
@@ -51,6 +51,6 @@ class IdeasController < ApplicationController
   end
 
   def set_categories
-
+    @categories = ['webサイト', 'アプリ', 'ゲーム', '音楽', 'グルメ', '暮らし', 'ビジネス', 'オフライン', 'その他']
   end
 end

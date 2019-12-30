@@ -37,7 +37,7 @@ h6 {
 
 
 // 背景
-.contents-wrapper {
+body {
   background: #fafafa;
 }
 
@@ -113,6 +113,9 @@ h6 {
 }
 .pt-3 {
   padding-top: 3rem!important;
+}
+.pt-6 {
+  padding-top: 6rem!important;
 }
 .px-1 {
   padding: 1rem!important;

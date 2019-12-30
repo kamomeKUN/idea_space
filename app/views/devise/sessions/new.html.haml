@@ -3,23 +3,22 @@
 // サイドバー
 = render 'component/sidebar'
 %main
-  .contents-wrapper
-    .posts-wrapper
-      .container
-        %h2.posts-wrapper__title
-          = icon 'fas', 'sign-in-alt'
-          ログイン
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .form-section
-            %h3 メールアドレス
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-          .form-section
-            %h3 パスワード
-            = f.password_field :password, autocomplete: "current-password"
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me
-          .form-section
-            = f.submit "ログイン"
-        = render "devise/shared/links"
+  .posts-wrapper
+    .container
+      %h2.posts-wrapper__title
+        = icon 'fas', 'sign-in-alt'
+        ログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-section
+          %h3 メールアドレス
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .form-section
+          %h3 パスワード
+          = f.password_field :password, autocomplete: "current-password"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .form-section
+          = f.submit "ログイン"
+      = render "devise/shared/links"
