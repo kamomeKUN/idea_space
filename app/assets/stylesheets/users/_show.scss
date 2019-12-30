@@ -60,9 +60,16 @@
       color: $white;
     }
     p {
+      cursor: pointer;
       margin-top: .5rem;
       font-size: 1.4rem;
       color: $white;
+      transition: .3s;
+      &:hover {
+        transition: .3s;
+        transform: translateY(-3px);
+        text-shadow: 0 5px 5px $sub;
+      }
     }
     &:last-child {
       p {
@@ -112,4 +119,41 @@
     }
   }
 
+}
+
+.like-posts-wrapper {
+  display: none;
+  &__title {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60%;
+      left: .8rem;
+      width: 290px!important;
+      height: 2px;
+      background: $black;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 60%;
+      right: .8rem;
+      width: 290px!important;
+      height: 2px;
+      background: $black;
+    }
+    .fa-heart {
+      font-size: 2.4rem!important;
+    }
+  }
+}
+
+#back {
+  display: none;
+  cursor: pointer;
+  padding-top: 1rem;
+  margin-left: 1rem;
+  .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+  }
 }

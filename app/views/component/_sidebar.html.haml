@@ -1,7 +1,17 @@
 .sidebar
   %nav
     %ul.global-nav
-      %li ideaSpaceとは？
-      %li マイページ
-      %li 新着アイデア
-      %li 人気アイデア
+      = link_to root_path do
+        %li ideaSpaceとは？
+      = link_to root_path do
+        %li 新着アイデア
+      = link_to root_path do
+        %li 人気アイデア
+      - if user_signed_in?
+        = link_to user_path(current_user.id) do
+          %li マイページ
+      - else
+        = link_to root_path do
+          %li ログイン
+        = link_to root_path do
+          %li 新規登録

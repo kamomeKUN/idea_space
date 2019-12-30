@@ -90,11 +90,11 @@
     padding: 2rem 0;
     width: 100%;
     border-bottom: 1px solid $white;
-    color: $white;
     text-align: center;
     letter-spacing: .2rem;
     cursor: pointer;
     transition: .3s;
+    color: $white;
     &:hover {
       background: $sub;
       transition: .3s;

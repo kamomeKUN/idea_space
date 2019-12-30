@@ -10,7 +10,14 @@ class UsersController < ApplicationController
       @image = 'shirokuma.png'
     end
 
-    @ideas = @user.ideas
+    @ideas = @user.ideas.order(created_at: "DESC").page(params[:page]).per(6)
+
+    @user_likes = @user.likes
+
+    @like_ideas = []
+    @user_likes.each do |like|
+      @like_ideas << Idea.find(like.idea_id)
+    end
 
     @likes_count = 0
     @user.ideas.each do |idea|

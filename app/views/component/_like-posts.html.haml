@@ -1,13 +1,17 @@
-.posts-wrapper.pt-0
+.container
+  #back
+    = icon 'far', 'arrow-alt-circle-left'
+    %p 戻る
+.posts-wrapper.like-posts-wrapper.pt-3
   .container
-    %h2.posts-wrapper__title
-      = icon 'fab', 'hotjar'
-      人気アイデア
+    %h2.posts-wrapper__title.like-posts-wrapper__title
+      = icon 'far', 'heart'
+      いいねしたアイデア
     #slide
       SLIDE
       = image_tag '/assets/slide'
     .card-wrapper
-      - @ideas.each do |idea|
+      - @like_ideas.each do |idea|
         .card
           = link_to idea_path(idea.id), class: 'card__top' do
             .card__top--title
@@ -17,7 +21,13 @@
             .card__top--user-name
               = "投稿者 : #{idea.user.name}"
           .card__bottom
-            = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
+            -case idea.user.avatar
+            -when 0 then
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+            -when 1 then
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+            -else
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
             .btn-box
               .btn-box__share-btn.btn-box__btn
                 = icon 'fas', 'share-alt'
@@ -39,6 +49,4 @@
             .card__other--category
               = idea.category
 
-    = link_to ideas_path do
-      %button.btn.btn-accent
-        もっと見る
+    = paginate @ideas

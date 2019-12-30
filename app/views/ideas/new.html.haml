@@ -17,7 +17,9 @@
           = f.text_area :content
         .form-section
           %h3 カテゴリ
-          = f.select :category, @categories, include_blank: "-----"
+          .form-section__select-wrap
+            = icon 'fas', 'sort-down'
+            = f.select :category, @categories, include_blank: "-----"
         .form-section
           = f.submit '投稿する'
 // フッター

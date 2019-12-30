@@ -21,8 +21,12 @@
             .btn-box
               .btn-box__share-btn.btn-box__btn
                 = icon 'fas', 'share-alt'
-              .btn-box__like-btn.btn-box__btn
-                = icon 'fas', 'heart'
+              - if current_user.likes.find_by(idea_id: idea.id)
+                = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                  = icon 'fas', 'heart', class: 'unlike'
+              - else
+                = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                  = icon 'fas', 'heart'
           .card__other
             .card__other--comments
               %p
@@ -33,7 +37,4 @@
                 = idea.likes.count
               = icon 'fas', 'heart'
 
-
-    = link_to ideas_path do
-      %button.btn.btn-accent
-        もっと見る
+    = paginate @ideas
