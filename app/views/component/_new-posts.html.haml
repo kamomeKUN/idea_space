@@ -25,14 +25,18 @@
             -else
               = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
             .btn-box
-              .btn-box__share-btn.btn-box__btn
-                = icon 'fas', 'share-alt'
-              - if current_user.likes.find_by(idea_id: idea.id)
-                = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
-                  = icon 'fas', 'heart', class: 'unlike'
+              - if user_signed_in?
+                .btn-box__share-btn.btn-box__btn
+                  = icon 'fas', 'share-alt'
+                - if current_user.likes.find_by(idea_id: idea.id)
+                  = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                    = icon 'fas', 'heart', class: 'unlike'
+                - else
+                  = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                    = icon 'fas', 'heart'
               - else
-                = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
-                  = icon 'fas', 'heart'
+                .btn-box__share-btn.btn-box__btn.mr-0
+                  = icon 'fas', 'share-alt'
           .card__other
             .card__other--comments
               %p

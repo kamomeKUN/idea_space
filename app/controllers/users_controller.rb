@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       @like_ideas << Idea.find(like.idea_id)
     end
 
+
     @likes_count = 0
     @user.ideas.each do |idea|
       @likes_count += idea.likes.count
