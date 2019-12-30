@@ -2,11 +2,11 @@ class IdeasController < ApplicationController
   before_action :set_categories, only:[:index, :new, :search]
 
   def top
-    @ideas = Idea.all
+    @ideas = Idea.all.order(created_at: "DESC").limit(6)
   end
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order(created_at: "DESC").limit(6)
   end
 
   def show

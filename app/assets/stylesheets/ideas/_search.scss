@@ -8,7 +8,18 @@
       font-size: 2.2rem!important;
     }
   }
+  .search-title {
+    margin-top: 5rem;
+    display: block;
+  }
+  .search-form {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
 }
+
+
 .pagination {
   height: auto;
   &__inner {
