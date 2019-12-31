@@ -1,2 +1,35 @@
-%footer.footer
-  = image_tag '/assets/logo-light.png', class: 'footer__logo'
+%footer
+  .footer-top
+    .container
+      %ul.footer-top__nav
+        %li
+          = link_to root_path, class: 'footer-link' do
+            = icon 'fas', 'angle-right'
+            ideaSpaceとは？
+        %li
+          = link_to root_path, class: 'footer-link' do
+            = icon 'fas', 'angle-right'
+            製作者について
+        %li
+          = link_to root_path, class: 'footer-link' do
+            = icon 'fas', 'angle-right'
+            ご意見・ご要望
+        - if user_signed_in?
+          %li
+            = link_to destroy_user_session_path, method: 'DELETE', class: 'footer-link' do
+              = icon 'fas', 'angle-right'
+              ログアウト
+        - else
+          %li
+            = link_to new_user_session_path, class: 'footer-link' do
+              = icon 'fas', 'angle-right'
+              ログイン
+          %li
+            = link_to new_user_registration_path, method: 'DELETE', class: 'footer-link' do
+              = icon 'fas', 'angle-right'
+              新規登録
+
+      = link_to root_path, class: 'footer-top__logo' do
+        = image_tag 'logo-light'
+  .footer-bottom
+    %p Copyright &copy; 2020 Yuma

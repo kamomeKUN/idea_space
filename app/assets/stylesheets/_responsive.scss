@@ -45,6 +45,45 @@
       }
     }
   }
+  //---------------------- Footer ---------------------------//
+  .footer-top {
+    width: 100%;
+    height: auto;
+    background: $main;
+    .container {
+      flex-flow: column;
+      display: flex;
+      align-items: center;
+    }
+    &__logo {
+      display: none;
+    }
+    &__nav {
+      width: 100%;
+      font-size: .9rem;
+      margin-top: 0rem;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      li {
+        font-size: .8rem;
+        width: 100%;
+        margin: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid $white;
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .footer-link {
+    color: $white;
+    .fa-angle-right {
+      color: $white;
+    }
+  }
 
   //---------------------- Ideas#Index ---------------------------//
   .index-top {
