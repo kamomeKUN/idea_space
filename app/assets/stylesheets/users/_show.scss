@@ -159,7 +159,7 @@
   text-align: center;
   z-index: 110;
   position: fixed;
-  top: 100px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   &__title {
@@ -170,6 +170,12 @@
       color: $white;
       font-size: 2rem;
     }
+  }
+  &__slide {
+    animation: Flashing 2s infinite linear;
+    margin-top: 2rem;
+    width: 200px;
+    height: auto;
   }
 }
 .avatar-wrap {
@@ -209,5 +215,17 @@
       padding: 1rem;
       background: gray;
     }
+  }
+}
+
+@keyframes Flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
