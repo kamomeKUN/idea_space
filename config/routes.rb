@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      post :like
+      patch :avatar_update
     end
   end
 

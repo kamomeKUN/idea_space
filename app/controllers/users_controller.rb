@@ -2,12 +2,22 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     case @user.avatar
-    when 0 then
-      @image = 'hiyoko.png'
     when 1 then
+      @image = 'hiyoko2.png'
+    when 2 then
+      @image = 'usagi.png'
+    when 3 then
+      @image = 'harinezumi.png'
+    when 4 then
+      @image = 'inu.png'
+    when 5 then
+      @image = 'neko.png'
+    when 6 then
+      @image = 'raion.png'
+    when 7 then
       @image = 'shirokuma.png'
     else
-      @image = 'shirokuma.png'
+      @image = 'hiyoko.png'
     end
 
     @ideas = @user.ideas.order(created_at: "DESC").page(params[:page]).per(6)
@@ -24,6 +34,14 @@ class UsersController < ApplicationController
     @user.ideas.each do |idea|
       @likes_count += idea.likes.count
     end
+  end
+
+
+
+  def avatar_update
+    @user = User.find(current_user.id)
+    @user.update(avatar: params[:id])
+    redirect_to user_path(@user.id)
   end
 
 end

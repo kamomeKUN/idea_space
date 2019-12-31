@@ -42,7 +42,7 @@
             = icon 'fas', 'heart'
             0〜
         = image_tag 'hiyoko', class: 'avatar-wrap__box--img'
-        %button.btn.btn-sub 選択する
+        = link_to '選択する', avatar_update_user_path(0), class: 'btn btn-sub', method: 'PATCH'
 
       .avatar-wrap__box
         .avatar-wrap__box--conditions
@@ -51,7 +51,7 @@
             5〜
         = image_tag 'hiyoko2', class: 'avatar-wrap__box--img'
         - if @likes_count >= 5
-          %button.btn.btn-sub 選択する
+          = link_to '選択する', avatar_update_user_path(1), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -62,7 +62,7 @@
             20〜
         = image_tag 'usagi', class: 'avatar-wrap__box--img'
         - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+          = link_to '選択する', avatar_update_user_path(2), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -72,8 +72,8 @@
             = icon 'fas', 'heart'
             50〜
         = image_tag 'harinezumi', class: 'avatar-wrap__box--img'
-        - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+        - if @likes_count >= 50
+          = link_to '選択する', avatar_update_user_path(3), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -83,8 +83,8 @@
             = icon 'fas', 'heart'
             100〜
         = image_tag 'inu', class: 'avatar-wrap__box--img'
-        - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+        - if @likes_count >= 100
+          = link_to '選択する', avatar_update_user_path(4), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -94,8 +94,8 @@
             = icon 'fas', 'heart'
             250〜
         = image_tag 'neko', class: 'avatar-wrap__box--img'
-        - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+        - if @likes_count >= 250
+          = link_to '選択する', avatar_update_user_path(5), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -105,8 +105,8 @@
             = icon 'fas', 'heart'
             500〜
         = image_tag 'raion', class: 'avatar-wrap__box--img'
-        - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+        - if @likes_count >= 500
+          = link_to '選択する', avatar_update_user_path(6), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
@@ -116,8 +116,8 @@
             = icon 'fas', 'heart'
             1000〜
         = image_tag 'shirokuma', class: 'avatar-wrap__box--img'
-        - if @likes_count >= 20
-          %button.btn.btn-sub 選択する
+        - if @likes_count >= 1000
+          = link_to '選択する', avatar_update_user_path(7), class: 'btn btn-sub', method: 'PATCH'
         - else
           %button.btn.select-ng いいねが足りません
 
