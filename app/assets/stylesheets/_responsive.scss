@@ -150,6 +150,15 @@
     }
   }
 
+  //---------------------- Users#Show ---------------------------//
+  .avatar-wrap {
+    position: relative;
+    width: 300px;
+    &__box {
+      width: 300px;
+    }
+  }
+
 }// End 1024px
 
 

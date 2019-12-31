@@ -1,13 +1,31 @@
-.posts-wrapper.search-wrapper
+// ヘッダー
+= render 'component/header'
+// サイドバー
+= render 'component/sidebar'
+
+.index-top
   .container
-    %h2.posts-wrapper__title.search-wrapper__title
-      = "検索結果\"#{@ideas_count}\"件"
-      = icon 'fas', 'search'
+    %h1
+      アイデアを投稿して、
+      %br
+      いいねをもらおう！
+    = link_to '投稿する', new_idea_path, class: 'btn btn-accent'
+    = image_tag '/assets/index-top'
+
+%main
+  .container.px-1
+    = render 'component/search-form'
+
+.posts-wrapper.lists
+  .container
+    %h2.posts-wrapper__title
+      = icon 'fab', 'hotjar'
+      人気アイデア
     #slide
       SLIDE
       = image_tag '/assets/slide'
     .card-wrapper
-      - @ideas.each do |idea|
+      - @popular_ideas.each do |idea|
         .card
           = link_to idea_path(idea.id), class: 'card__top' do
             .card__top--title
@@ -35,10 +53,18 @@
             -else
               = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
             .btn-box
-              .btn-box__share-btn.btn-box__btn
-                = icon 'fas', 'share-alt'
-              .btn-box__like-btn.btn-box__btn
-                = icon 'fas', 'heart'
+              - if user_signed_in?
+                .btn-box__share-btn.btn-box__btn
+                  = icon 'fas', 'share-alt'
+                - if current_user.likes.find_by(idea_id: idea.id)
+                  = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                    = icon 'fas', 'heart', class: 'unlike'
+                - else
+                  = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                    = icon 'fas', 'heart'
+              - else
+                .btn-box__share-btn.btn-box__btn.mr-0
+                  = icon 'fas', 'share-alt'
           .card__other
             .card__other--comments
               %p
@@ -51,20 +77,7 @@
             .card__other--category
               = idea.category
 
-    = paginate @ideas
+    = paginate @popular_lists
 
-    = link_to ideas_path do
-      %button.btn.btn-accent
-        戻る
-    .search-title
-      再検索
-      = icon 'fas', 'search-minus'
-      = icon 'fas', 'search-plus'
-    = form_with url: search_ideas_path, local: true, method: 'GET', class: 'search-form' do |f|
-      .search-form__select-wrap
-        = f.select :search, [['新着順', 0], ['人気順', 3],['コメント数順', 2]]
-        = icon 'fas', 'sort-down'
-      .search-form__select-wrap
-        = f.select :category, @categories
-        = icon 'fas', 'sort-down'
-      = f.submit '検索する', class: 'search-form__submit'
+// フッター
+= render 'component/footer'

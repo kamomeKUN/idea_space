@@ -12,20 +12,13 @@
     = link_to '投稿する', new_idea_path, class: 'btn btn-accent'
     = image_tag '/assets/index-top'
 
-
-
-
 %main
   .container.px-1
     = render 'component/search-form'
-
-
-
   // 新着アイデア
   = render 'component/new-posts'
-
   // 人気アイデア
   = render 'component/popular-posts'
 
-  // フッター
-  = render 'component/footer'
+// フッター
+= render 'component/footer'
