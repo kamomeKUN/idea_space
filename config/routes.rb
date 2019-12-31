@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :new_lists
       get :popular_lists
       get :search
+      get :what
     end
   end
 

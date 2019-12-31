@@ -48,6 +48,11 @@ class IdeasController < ApplicationController
   end
 
 
+  def what
+
+  end
+
+
   private
 
   def idea_params
