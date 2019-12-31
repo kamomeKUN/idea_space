@@ -16,7 +16,8 @@
           .card__top--user-name
             = "投稿者 : #{@idea.user.name}"
       .card__bottom.idea-show__bottom
-        = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
+        = link_to user_path(@idea.user_id) do
+          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
         .btn-box
           - if current_user.id == @idea.user_id
             = link_to idea_path(@idea.id), class: 'btn-box__destroy-btn btn-box__btn', method: 'DELETE' do

@@ -8,6 +8,7 @@
   &__img-wrap {
     position: relative;
     img {
+      cursor: pointer;
       border: 5px solid $accent;
       width: 200px;
       height: 200px;
@@ -39,11 +40,6 @@
       margin-left: .3rem;
       color: $white;
     }
-  }
-  .point {
-    margin-top: .8rem;
-    font-size: 1.2rem;
-    color: $white;
   }
 }
 .status-list {
@@ -148,12 +144,71 @@
   }
 }
 
-#back {
+.back {
   display: none;
   cursor: pointer;
   padding-top: 1rem;
   margin-left: 1rem;
   .fa-arrow-alt-circle-left {
     font-size: 2rem;
+  }
+}
+
+.avatar-wrapper {
+  display: none;
+  text-align: center;
+  z-index: 110;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  &__title {
+    margin-right: 1rem;
+    color: $white;
+    .fa-arrow-alt-circle-left {
+      cursor: pointer;
+      color: $white;
+      font-size: 2rem;
+    }
+  }
+}
+.avatar-wrap {
+  // width: 300px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  &__box {
+    padding: 3rem 0;
+    position: relative;
+    // width: 300px;
+    width: 400px;
+    scroll-snap-align: center;
+    flex: none;
+    &--img {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+    }
+    &--conditions {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $white;
+      p {
+        color: $white;
+        font-size: 1.3rem;
+        .fa-heart {
+          color: $white;
+        }
+      }
+    }
+    .select-ng {
+      width: 280px;
+      padding: 1rem;
+      background: gray;
+    }
   }
 }

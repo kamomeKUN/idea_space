@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     case @user.avatar
     when 0 then
-      @image = 'shirokuma.png'
+      @image = 'hiyoko.png'
     when 1 then
       @image = 'shirokuma.png'
     else

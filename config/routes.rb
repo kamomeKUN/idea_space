@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'ideas#top'
 
-  resources :users
+  resources :users do
+    member do
+      post :like
+    end
+  end
+
   resources :ideas do
     collection do
       get :top
@@ -11,6 +16,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
   resources :comments, only:[:create, :destroy]
 
   resources :likes, only:[:destroy] do

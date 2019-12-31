@@ -1,3 +1,4 @@
+.overlay
 // ヘッダー
 = render 'component/header'
 // サイドバー
@@ -10,13 +11,14 @@
         %p
           = @likes_count
         = icon 'far', 'heart'
-      = image_tag @image
+      - if current_user.id == @user.id
+        = image_tag @image, class: 'user-top__img-wrap--img'
+      - else
+        = image_tag @image
     %h1
       = @user.name
       -# = icon 'fas', 'user-plus'
       -# = icon 'fas', 'user-minus'
-    .point
-      = "所有ポイント : #{@user.point}pt"
     %ul.status-list
       %li
         .number 40
@@ -26,6 +28,99 @@
         %p フォロワー
       %li
         %p#swich-like いいね
+
+
+.avatar-wrapper
+  .container.px-1
+    %h2.avatar-wrapper__title
+      = icon 'far', 'arrow-alt-circle-left', class: 'back-avatar'
+      アバター選択
+    .avatar-wrap
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            0〜
+        = image_tag 'hiyoko', class: 'avatar-wrap__box--img'
+        %button.btn.btn-sub 選択する
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            5〜
+        = image_tag 'hiyoko2', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 5
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            20〜
+        = image_tag 'usagi', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            50〜
+        = image_tag 'harinezumi', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            100〜
+        = image_tag 'inu', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            250〜
+        = image_tag 'neko', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            500〜
+        = image_tag 'raion', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
+      .avatar-wrap__box
+        .avatar-wrap__box--conditions
+          %p
+            = icon 'fas', 'heart'
+            1000〜
+        = image_tag 'shirokuma', class: 'avatar-wrap__box--img'
+        - if @likes_count >= 20
+          %button.btn.btn-sub 選択する
+        - else
+          %button.btn.select-ng いいねが足りません
+
 
 = render 'component/my-posts'
 = render 'component/like-posts'
