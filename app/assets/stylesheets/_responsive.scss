@@ -395,4 +395,20 @@
     }
   }
 
+  //---------------------- Ideas#What ---------------------------//
+  .what-box {
+    padding: 1.5rem 1rem 2rem;
+    &__title {
+      font-size: 1.6rem;
+    }
+    &__description {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
+    &__btn {
+      font-size: 1.2rem;
+    }
+  }
+
 }// End 500px
