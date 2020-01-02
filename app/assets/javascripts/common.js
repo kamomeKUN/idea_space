@@ -22,4 +22,14 @@ $(function() {
       }
     }
   });
+
+  // フラッシュメッセージ
+  let closeBtn      = $('.fa-times');
+  let overlay       = $('.flash-overlay');
+  let flashMessage  = $('.flash-box');
+
+  closeBtn.click(function() {
+    overlay.fadeOut();
+    flashMessage.fadeOut();
+  });
 });
