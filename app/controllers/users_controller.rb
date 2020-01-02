@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def delete
+
+  end
+
   def show
     @user = User.find(params[:id])
     case @user.avatar

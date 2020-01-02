@@ -4,11 +4,11 @@
 = render 'component/sidebar'
 
 %main
-  .what-wrapper
+  .other-wrapper
     .container.px-1
-      .what-box
-        %h1.what-box__title ideaSpaceとは...？
-        .what-box__description
+      .other-box
+        %h1.other-box__title ideaSpaceとは...？
+        .other-box__description.align-left
           %p ideaSpaceとは、普段の生活の中で思いついたアイデアを、気軽に「投稿」＆「共有」できるサービスです。
           %p.mt-2 例えば、、、
           %p.mt-1「こんなサービスあったらいいな」
@@ -18,7 +18,7 @@
           %p.mt-1「こんな集まりがあったら是非参加したい」などなど。
           %p.mt-2 上記の例以外にも、ジャンルを問わずあなたが思いつくアイデアを是非投稿してみて下さい。
           %p.mt-1 あなたのアイデアが誰かの目に留まって、実現されるかも...?
-        = link_to '投稿する', new_idea_path, class: 'btn btn-accent what-box__btn'
+        = link_to '投稿する', new_idea_path, class: 'btn btn-accent other-box__btn'
 
 // フッター
 = render 'component/footer'

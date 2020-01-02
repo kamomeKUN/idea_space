@@ -20,6 +20,9 @@
 .btn-sub {
   background: linear-gradient(to right, $sub, #4288cf);
 }
+.btn-danger {
+  background: linear-gradient(to right, #c0392b, $danger);
+}
 
 // 見出し
 .posts-wrapper {
@@ -62,6 +65,46 @@
     }
   }
 }
+
+// サイト紹介、退会ページ
+.other-wrapper {
+  background: url('top');
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  padding: 7rem 0 3rem;
+}
+
+.other-box {
+  margin: 0 auto;
+  border-radius: 3px;
+  border: 5px solid $sub;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  background: $white;
+  padding: 2rem 3rem;
+  &__title {
+    border-bottom: 4px dotted $main;
+    padding-bottom: 1rem;
+  }
+  &__description {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    line-height: 2rem;
+    ul {
+      text-align: left;
+      display: inline-block;
+      li {
+        margin-top: 1rem;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 2rem!important;
+  }
+}
+
 
 @keyframes Flashing {
   0% {

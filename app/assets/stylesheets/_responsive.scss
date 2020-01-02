@@ -241,6 +241,11 @@
     }
   }
 
+  .flash {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   //---------------------- Sidebar ---------------------------//
   .sidebar {
     width: 100vw;
@@ -365,12 +370,6 @@
   }
 
   //---------------------- Ideas#Show ---------------------------//
-  .idea-show {
-    height: auto!important;
-    &__top {
-      padding: 10px 10px 30px;
-    }
-  }
   .comment-box {
     &__btn {
       flex-flow: column;
@@ -402,7 +401,7 @@
   }
 
   //---------------------- Ideas#What ---------------------------//
-  .what-box {
+  .other-box {
     padding: 1.5rem 1rem 2rem;
     &__title {
       font-size: 1.6rem;

@@ -15,13 +15,17 @@
             = link_to destroy_user_session_path, method: 'DELETE', class: 'footer-link' do
               = icon 'fas', 'angle-right'
               ログアウト
+          %li
+            = link_to delete_users_path, class: 'footer-link' do
+              = icon 'fas', 'angle-right'
+              退会はこちら
         - else
           %li
             = link_to new_user_session_path, class: 'footer-link' do
               = icon 'fas', 'angle-right'
               ログイン
           %li
-            = link_to new_user_registration_path, method: 'DELETE', class: 'footer-link' do
+            = link_to new_user_registration_path, class: 'footer-link' do
               = icon 'fas', 'angle-right'
               新規登録
 

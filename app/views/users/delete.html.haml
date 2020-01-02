@@ -1,0 +1,23 @@
+// ヘッダー
+= render 'component/header'
+// サイドバー
+= render 'component/sidebar'
+
+%main
+  .other-wrapper
+    .container.px-1
+      .other-box
+        %h1.other-box__title
+          = icon 'fas', 'exclamation-triangle'
+          退会時のご注意事項
+        .other-box__description
+          %p 退会をすると以下の項目が全て消えてしまいます。
+          %ul
+            %li ・あなたのユーザー情報
+            %li ・今までにあなたが投稿したアイデア
+            %li ・投稿したアイデアに紐づくいいねやコメント
+          %p.mt-2 上記の内容が全て消えいますが、それでもよろしければ以下のボタンを押して下さい。
+        = link_to '退会する', user_registration_path, method: 'DELETE', class: 'btn btn-danger other-box__btn'
+
+// フッター
+= render 'component/footer'

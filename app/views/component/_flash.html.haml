@@ -1,0 +1,10 @@
+- if flash[:notice]
+  .flash-overlay
+  .flash-box.notice
+    - flash.each do |key, value|
+      = content_tag :div, value
+- elsif flash[:alert]
+  .flash-overlay
+  .flash-box.alert
+    - flash.each do |key, value|
+      = content_tag :div, value

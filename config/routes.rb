@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'ideas#top'
 
   resources :users do
+    collection do
+      get :delete
+    end
     member do
       patch :avatar_update
     end

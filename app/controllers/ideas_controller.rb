@@ -47,19 +47,37 @@ class IdeasController < ApplicationController
     @category    = params[:category]
     @ideas_count = Idea.where(category: params[:category]).count
 
-    case @order
-    when 1 then
-      @likes_rank = Idea.find(Like.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
-      @ideas = Kaminari.paginate_array(@likes_rank).page(params[:page]).per(LIMIT)
-      @order_name = '(人気順)'
-    when 2 then
-      @comments_rank = Idea.find(Comment.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
-      @ideas = Kaminari.paginate_array(@comments_rank).page(params[:page]).per(LIMIT)
-      @order_name = '(コメント数順)'
-    else
-      @ideas = Idea.where(category: params[:category]).order(created_at: "DESC").page(params[:page]).per(LIMIT)
-      @order_name = '(新着順)'
+    if @ideas_count > 0
+      case @order
+      when 1 then
+        @likes_rank  = Idea.find(Like.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
+        @result      = []
+        @likes_rank.each do |idea|
+          if idea[:category] == params[:category]
+            @result << idea
+          end
+        end
+        @ideas       = Kaminari.paginate_array(@result).page(params[:page]).per(LIMIT)
+        @ideas_count = @ideas.count
+        @order_name  = '(人気順)'
+      when 2 then
+        @comments_rank = Idea.find(Comment.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
+        @result        = []
+        @comments_rank.each do |idea|
+          if idea[:category] == params[:category]
+            @result << idea
+          end
+        end
+        @ideas = Kaminari.paginate_array(@result).page(params[:page]).per(LIMIT)
+        @ideas_count = @ideas.count
+        @order_name  = '(コメント数順)'
+      else
+        @ideas       = Idea.where(category: params[:category]).order(created_at: "DESC").page(params[:page]).per(LIMIT)
+        @ideas_count = @ideas.count
+        @order_name  = '(新着順)'
+      end
     end
+
   end
 
 

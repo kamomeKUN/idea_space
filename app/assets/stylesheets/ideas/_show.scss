@@ -25,16 +25,21 @@
 .idea-show {
   width: 80%!important;
   margin: 1rem auto 0!important;
-  height: 500px!important;
+  min-height: 500px;
+  height: auto !important;
+  height: 500px;
   &:hover {
     box-shadow: 0 1px 5px #999;
     transition: none;
     transform: none;
   }
   &__top {
+    padding: 10px 10px 30px;
     word-break: break-all;
     position: relative;
-    height: calc(100% - 100px)!important;
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
     &--text {
       margin: 1rem 0;
     }
