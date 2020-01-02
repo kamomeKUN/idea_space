@@ -43,8 +43,23 @@ class IdeasController < ApplicationController
   end
 
   def search
-    @ideas = Idea.where(category: params[:category]).page(params[:page]).per(LIMIT)
+    @order       = params[:search].to_i
+    @category    = params[:category]
     @ideas_count = Idea.where(category: params[:category]).count
+
+    case @order
+    when 1 then
+      @likes_rank = Idea.find(Like.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
+      @ideas = Kaminari.paginate_array(@likes_rank).page(params[:page]).per(LIMIT)
+      @order_name = '(人気順)'
+    when 2 then
+      @comments_rank = Idea.find(Comment.group(:idea_id).order('count(idea_id) desc').pluck(:idea_id))
+      @ideas = Kaminari.paginate_array(@comments_rank).page(params[:page]).per(LIMIT)
+      @order_name = '(コメント数順)'
+    else
+      @ideas = Idea.where(category: params[:category]).order(created_at: "DESC").page(params[:page]).per(LIMIT)
+      @order_name = '(新着順)'
+    end
   end
 
 

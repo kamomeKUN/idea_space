@@ -14,8 +14,11 @@
               = idea.title
             .card__top--text
               = truncate(idea.content, length: 108)
+            .card__top--time
+              = date_time(idea.created_at)
             .card__top--user-name
-              = "投稿者 : #{idea.user.name}"
+              = icon 'far', 'user-circle'
+              = idea.user.name
           .card__bottom
             -case idea.user.avatar
             -when 1 then

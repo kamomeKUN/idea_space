@@ -13,11 +13,30 @@
           = @idea.title
         .card__top--text.idea-show__top--text
           = @idea.content
+          .card__top--time
+            = date_time(@idea.created_at)
           .card__top--user-name
-            = "投稿者 : #{@idea.user.name}"
+            = icon 'far', 'user-circle'
+            = @idea.user.name
       .card__bottom.idea-show__bottom
         = link_to user_path(@idea.user_id) do
-          = image_tag '/assets/shirokuma.png', class: 'card__bottom--user-icon'
+          -case @idea.user.avatar
+          -when 1 then
+            = image_tag 'hiyoko2.png', class: 'card__bottom--user-icon'
+          -when 2 then
+            = image_tag 'usagi.png', class: 'card__bottom--user-icon'
+          -when 3 then
+            = image_tag 'harinezumi.png', class: 'card__bottom--user-icon'
+          -when 4 then
+            = image_tag 'inu.png', class: 'card__bottom--user-icon'
+          -when 5 then
+            = image_tag 'neko.png', class: 'card__bottom--user-icon'
+          -when 6 then
+            = image_tag 'raion.png', class: 'card__bottom--user-icon'
+          -when 7 then
+            = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+          -else
+            = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
         .btn-box
           - if current_user.id == @idea.user_id
             = link_to idea_path(@idea.id), class: 'btn-box__destroy-btn btn-box__btn', method: 'DELETE' do
@@ -54,12 +73,22 @@
       - @comments.each do |comment|
         .comments-list__item
           -case comment.user.avatar
-          -when 0 then
-            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
-          -when 1 then
-            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
-          -else
-            = image_tag 'shirokuma.png', class: 'comments-list__item--img'
+            -when 1 then
+              = image_tag 'hiyoko2.png', class: 'card__bottom--user-icon'
+            -when 2 then
+              = image_tag 'usagi.png', class: 'card__bottom--user-icon'
+            -when 3 then
+              = image_tag 'harinezumi.png', class: 'card__bottom--user-icon'
+            -when 4 then
+              = image_tag 'inu.png', class: 'card__bottom--user-icon'
+            -when 5 then
+              = image_tag 'neko.png', class: 'card__bottom--user-icon'
+            -when 6 then
+              = image_tag 'raion.png', class: 'card__bottom--user-icon'
+            -when 7 then
+              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+            -else
+              = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
           .comments-list__item--user-name
             = "#{comment.user.name} :"
           .comments-list__item--content

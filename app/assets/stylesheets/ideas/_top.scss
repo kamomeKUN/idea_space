@@ -180,6 +180,12 @@
       right: 10px;
       bottom: 5px;
     }
+    &--time {
+      font-size: .9rem;
+      position: absolute;
+      left: 10px;
+      bottom: 5px;
+    }
     &--title {
       padding-bottom: 10px;
       border-bottom: 2px dotted $main;
@@ -207,7 +213,6 @@
       width: 68px;
       height: 68px;
       border-radius: 50%;
-
       object-fit: cover;
       &:hover {
         opacity: .7;

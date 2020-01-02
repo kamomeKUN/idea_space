@@ -7,13 +7,9 @@
             = icon 'fas', 'angle-right'
             ideaSpaceとは？
         %li
-          = link_to root_path, class: 'footer-link' do
+          = link_to 'https://yumanoblog.com/', class: 'footer-link', target: 'blank' do
             = icon 'fas', 'angle-right'
-            製作者について
-        %li
-          = link_to root_path, class: 'footer-link' do
-            = icon 'fas', 'angle-right'
-            ご意見・ご要望
+            製作者のブログ
         - if user_signed_in?
           %li
             = link_to destroy_user_session_path, method: 'DELETE', class: 'footer-link' do

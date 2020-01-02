@@ -176,6 +176,9 @@
 
 @media screen and (max-width: 500px) {
   //---------------------- Common ---------------------------//
+  .btn {
+    margin-top: 0rem;
+  }
   .btn, .form-section input[type='submit'] {
     padding: .5rem 3rem;
   }
@@ -356,6 +359,9 @@
         margin-left: .8rem;
       }
     }
+  }
+  .select-ng {
+    padding: .5rem 0!important;
   }
 
   //---------------------- Ideas#Show ---------------------------//

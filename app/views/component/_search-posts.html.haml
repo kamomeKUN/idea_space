@@ -1,8 +1,11 @@
 .posts-wrapper.search-wrapper
   .container
     %h2.posts-wrapper__title.search-wrapper__title
-      = "検索結果\"#{@ideas_count}\"件"
+      = "#{@category}の検索結果\"#{@ideas_count}\"件"
       = icon 'fas', 'search'
+      %br
+      %span
+        = @order_name
     #slide
       SLIDE
       = image_tag '/assets/slide'
@@ -14,8 +17,11 @@
               = idea.title
             .card__top--text
               = truncate(idea.content, length: 108)
+            .card__top--time
+              = date_time(idea.created_at)
             .card__top--user-name
-              = "投稿者 : #{idea.user.name}"
+              = icon 'far', 'user-circle'
+              = idea.user.name
           .card__bottom
             -case idea.user.avatar
             -when 1 then
