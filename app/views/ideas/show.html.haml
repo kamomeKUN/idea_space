@@ -44,7 +44,7 @@
                 = icon 'fas', 'trash'
             .btn-box__comment-btn.btn-box__btn
               = icon 'fas', 'comment'
-            .btn-box__share-btn.btn-box__btn
+            = link_to "https://twitter.com/share?url=#{request.url}&text=#{@idea.title}", title: 'Twitter', target: '_blank', class: 'btn-box__share-btn btn-box__btn' do
               = icon 'fas', 'share-alt'
             - if current_user.likes.find_by(idea_id: @idea.id)
               = link_to like_path(@idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
@@ -53,7 +53,7 @@
               = link_to like_like_path(@idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
                 = icon 'fas', 'heart'
           - else
-            .btn-box__share-btn.btn-box__btn
+            = link_to "https://twitter.com/share?url=#{request.url}&text=#{@idea.title}", title: 'Twitter', target: '_blank', class: 'btn-box__share-btn btn-box__btn' do
               = icon 'fas', 'share-alt'
       .card__other
         .card__other--comments
@@ -76,30 +76,35 @@
     .comments-list
       - @comments.each do |comment|
         .comments-list__item
-          -case comment.user.avatar
-            -when 1 then
-              = image_tag 'hiyoko2.png', class: 'card__bottom--user-icon'
-            -when 2 then
-              = image_tag 'usagi.png', class: 'card__bottom--user-icon'
-            -when 3 then
-              = image_tag 'harinezumi.png', class: 'card__bottom--user-icon'
-            -when 4 then
-              = image_tag 'inu.png', class: 'card__bottom--user-icon'
-            -when 5 then
-              = image_tag 'neko.png', class: 'card__bottom--user-icon'
-            -when 6 then
-              = image_tag 'raion.png', class: 'card__bottom--user-icon'
-            -when 7 then
-              = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
-            -else
-              = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
-          .comments-list__item--user-name
-            = "#{comment.user.name} :"
-          .comments-list__item--content
+          .comment-left
+            -case comment.user.avatar
+              -when 1 then
+                = image_tag 'hiyoko2.png', class: 'comment-left__user-icon'
+              -when 2 then
+                = image_tag 'usagi.png', class: 'comment-left__user-icon'
+              -when 3 then
+                = image_tag 'harinezumi.png', class: 'comment-left__user-icon'
+              -when 4 then
+                = image_tag 'inu.png', class: 'comment-left__user-icon'
+              -when 5 then
+                = image_tag 'neko.png', class: 'comment-left__user-icon'
+              -when 6 then
+                = image_tag 'raion.png', class: 'comment-left__user-icon'
+              -when 7 then
+                = image_tag 'shirokuma.png', class: 'comment-left__user-icon'
+              -else
+                = image_tag 'hiyoko.png', class: 'comment-left__user-icon'
+            .comment-left__user-name
+              = "#{comment.user.name}"
+          .comment-right
             = comment.content
           - if current_user.id == comment.user_id
-            .comments-list__item--destroy
+            .comments-list__item--other
+              = date_time(comment.created_at)
               = link_to '削除する', comment_path(comment.id), method: 'DELETE'
+          - else
+            .comments-list__item--other
+              = date_time(comment.created_at)
 
 
 

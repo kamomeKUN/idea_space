@@ -83,4 +83,12 @@ $(function() {
   })
 
 
+  // 投稿ボタン
+  let postBtn = $('.post-btn');
+  let path    = location.pathname
+  if(path == '/ideas/new') {
+    postBtn.css('display', 'none');
+  }
+
+
 });

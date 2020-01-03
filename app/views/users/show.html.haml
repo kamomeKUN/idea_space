@@ -17,14 +17,15 @@
         = image_tag @image
     %h1
       = @user.name
-      -# = icon 'fas', 'user-plus'
-      -# = icon 'fas', 'user-minus'
+      = render 'component/follow-button', user: @user
     %ul.status-list
       %li
-        .number 40
+        .number
+          = @user.followers.count
         %p フォロー
       %li
-        .number 1280
+        .number
+          = @user.followings.count
         %p フォロワー
       %li
         %p#swich-like いいね

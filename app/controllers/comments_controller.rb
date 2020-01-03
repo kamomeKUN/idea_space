@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
     comment.save
+    flash[:notice] = 'コメントを投稿しました。'
     redirect_to idea_path(params[:idea_id])
   end
 
@@ -9,6 +10,7 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     comment.destroy
     redirect_to idea_path(comment.idea_id)
+    flash[:alert] = 'コメントを削除しました。'
   end
 
   private

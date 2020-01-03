@@ -32,6 +32,9 @@
     }
   }
   h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
     font-size: 1.4rem;
     color: $white;
@@ -215,6 +218,16 @@
       background: gray;
     }
   }
+}
+
+.follow-btn {
+  cursor: pointer;
+  background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 @keyframes Flashing {

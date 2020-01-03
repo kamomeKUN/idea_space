@@ -55,5 +55,7 @@
               %p
                 = idea.likes.count
               = icon 'fas', 'heart'
+            .card__other--category
+              = idea.category
 
     = paginate @ideas

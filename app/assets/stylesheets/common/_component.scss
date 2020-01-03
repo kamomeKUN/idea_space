@@ -1,5 +1,23 @@
 @import './variables';
 
+// 投稿ボタン
+.post-btn {
+  width: 100px;
+  height: 100px;
+  background: $main;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 10px;
+  .fa-lightbulb {
+    color: $white;
+    position: fixed;
+    bottom: 35px;
+    right: 43px;
+    font-size: 3rem;
+  }
+}
+
 // ボタン
 .btn {
   line-height: 35px;

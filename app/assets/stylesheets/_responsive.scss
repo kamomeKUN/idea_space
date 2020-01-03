@@ -122,32 +122,6 @@
     width: 100%;
     margin: 2.5rem auto;
     height: auto;
-    &__item {
-      position: relative;
-      padding: 1.5rem 0;
-      border-bottom: 2px dashed $black;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      &--img {
-        width: 50px;
-        height: auto;
-      }
-      &--user-name {
-        margin-left: .5rem;
-        font-size: 1rem;
-      }
-      &--content {
-        margin-left: .5rem;
-        font-size: 1.2rem;
-      }
-      &--destroy {
-        position: absolute;
-        bottom: 5px;
-        right: 10px;
-        font-size: .8rem;
-      }
-    }
   }
 
   //---------------------- Users#Show ---------------------------//
@@ -375,6 +349,27 @@
       flex-flow: column;
     }
   }
+  .comment-left {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    &__user-icon {
+      width: 50px;
+      height: auto;
+    }
+    &__user-name {
+      margin-left: .5rem;
+      font-size: .8rem;
+    }
+  }
+  .comment-right {
+    width: calc(100% - 100px);
+    margin-left: .5rem;
+    font-size: .9rem;
+  }
+
 
   //---------------------- Ideas#Search ---------------------------//
   .search-wrapper {

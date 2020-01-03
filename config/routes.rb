@@ -28,4 +28,6 @@ Rails.application.routes.draw do
       post :like
     end
   end
+
+  resources :relationships, only: [:create, :destroy]
 end
