@@ -2,6 +2,7 @@ class LikesController < ApplicationController
   def like
     like = Like.new(idea_id: params[:id], user_id: current_user.id)
     like.save
+    flash[:like] = 'いいねしました。'
     redirect_back(fallback_location: root_path)
   end
   def destroy

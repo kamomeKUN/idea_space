@@ -10,3 +10,9 @@
     = icon 'fas', 'times'
     - flash.each do |key, value|
       = content_tag :div, value
+- elsif flash[:like]
+  .flash-overlay
+  .flash-box.like
+    = icon 'fas', 'times'
+    - flash.each do |key, value|
+      = content_tag :div, value
