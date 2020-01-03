@@ -5,11 +5,11 @@
         %li ideaSpaceとは？
       = link_to ideas_path do
         %li アイデア一覧
-      = link_to new_lists_ideas_path do
-        %li 新着アイデア
-      = link_to popular_lists_ideas_path do
-        %li 人気アイデア
       - if user_signed_in?
+        = link_to new_lists_ideas_path do
+          %li 新着アイデア
+        = link_to popular_lists_ideas_path do
+          %li 人気アイデア
         = link_to user_path(current_user.id) do
           %li マイページ
       - else

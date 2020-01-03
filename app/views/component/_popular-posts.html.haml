@@ -11,7 +11,7 @@
         .card
           = link_to idea_path(idea.id), class: 'card__top' do
             .card__top--title
-              = idea.title
+              = truncate(idea.title, length: 13)
             .card__top--text
               = truncate(idea.content, length: 108)
             .card__top--time

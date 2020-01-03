@@ -88,4 +88,46 @@ $(function() {
   }
 
 
+  // エラーメッセージ
+  let titleError     = $('.form-section__error--title');
+  let contentError   = $('.form-section__error--content');
+  let commentError   = $('.comment-box__error');
+  let nameError      = $('.edit-box__error');
+  let ideaTitle      = $('#idea_title');
+  let ideaContent    = $('#idea_content');
+  let commentBox     = $('#content');
+  let nameBox        = $('#name');
+
+  ideaTitle.keydown(function() {
+    let titleLength = ideaTitle.val().length;
+    if(titleLength >= 20) {
+      titleError.show();
+    } else {
+      titleError.hide();
+    }
+  });
+  ideaContent.keydown(function() {
+    let contentLength  = ideaContent.val().length;
+    if(contentLength >= 500) {
+      contentError.show();
+    } else {
+      contentError.hide();
+    }
+  })
+  commentBox.keydown(function() {
+    let commentLength  = commentBox.val().length;
+    if(commentLength >= 500) {
+      commentError.show();
+    } else {
+      commentError.hide();
+    }
+  })
+  nameBox.keydown(function() {
+    let nameLength  = nameBox.val().length;
+    if(nameLength >= 10) {
+      nameError.show();
+    } else {
+      nameError.hide();
+    }
+  })
 });

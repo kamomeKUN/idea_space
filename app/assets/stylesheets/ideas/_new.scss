@@ -7,6 +7,14 @@
   h3 {
     margin-bottom: 1rem;
   }
+  &__error {
+    display: none;
+    color: $danger;
+    .fa-exclamation-triangle {
+      color: $danger;
+      margin-bottom: 1rem;
+    }
+  }
   input, textarea, select {
     width: 50%;
     font-size: 1.1rem;

@@ -11,15 +11,21 @@
       = form_with model: @idea, local: true do |f|
         .form-section
           %h3 タイトル
+          %p.form-section__error.form-section__error--title
+            = icon 'fas', 'exclamation-triangle'
+            20文字以内で入力して下さい。
           = f.text_field :title, placeholder: '※20文字以内'
         .form-section
           %h3 どんなアイデア？
+          %p.form-section__error.form-section__error--content
+            = icon 'fas', 'exclamation-triangle'
+            500文字で入力して下さい。
           = f.text_area :content, placeholder: '※500文字以内'
         .form-section
           %h3 カテゴリ
           .form-section__select-wrap
             = icon 'fas', 'sort-down'
-            = f.select :category, @categories, include_blank: "-----"
+            = f.select :category, @categories
         .form-section
           = f.submit '投稿する'
 // フッター

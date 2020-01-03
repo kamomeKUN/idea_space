@@ -18,7 +18,9 @@
           %p.mt-1「こんな集まりがあったら是非参加したい」などなど。
           %p.mt-2 上記の例以外にも、ジャンルを問わずあなたが思いつくアイデアを是非投稿してみて下さい。
           %p.mt-1 あなたのアイデアが誰かの目に留まって、実現されるかも...?
-        = link_to '投稿する', new_idea_path, class: 'btn btn-accent other-box__btn'
-
+        - if user_signed_in?
+          = link_to '投稿する', new_idea_path, class: 'btn btn-accent other-box__btn'
+        - else
+          = link_to '新規登録', terms_ideas_path, class: 'btn btn-accent other-box__btn'
 // フッター
 = render 'component/footer'

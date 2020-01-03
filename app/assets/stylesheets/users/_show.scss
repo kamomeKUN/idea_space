@@ -252,6 +252,14 @@
   &__title {
     color: white;
   }
+  &__error {
+    display: none;
+    margin-top: 1rem;
+    color: $danger;
+    .fa-exclamation-triangle {
+      color: $danger;
+    }
+  }
   &__input {
     resize: none;
     margin-top: 2rem;

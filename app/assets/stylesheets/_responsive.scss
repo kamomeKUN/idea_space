@@ -232,6 +232,15 @@
     }
   }
 
+  .form-section {
+    h3 {
+      font-size: 1.3rem;
+    }
+    input, textarea {
+      width: 100%;
+    }
+  }
+
   //---------------------- Sidebar ---------------------------//
   .sidebar {
     width: 100vw;
@@ -294,12 +303,6 @@
     flex-flow: column;
     &__submit {
       margin: 1rem 1rem 0 0;
-    }
-  }
-  //---------------------- Ideas#New ---------------------------//
-  .form-section {
-    input, textarea {
-      width: 100%;
     }
   }
 

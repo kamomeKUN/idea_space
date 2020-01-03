@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
-  before_action :set_categories, only:[:index, :new, :search, :new_lists, :popular_lists]
+  before_action :authenticate_user!, only:[:search, :new_lists, :popular_lists, :new, :create, :destroy]
+  before_action :set_categories, only:[:index, :new, :search, :new_lists, :popular_lists, :create]
   LIMIT = 6
 
   def top
@@ -36,15 +37,16 @@ class IdeasController < ApplicationController
       flash[:notice] = 'アイデアを投稿しました。'
       redirect_to ideas_path
     else
-      flash[:alert] = 'アイデアの投稿に失敗しました。'
-      redirect_to ideas_path
+      flash.now[:alert] = 'アイデアの投稿に失敗しました。'
+      render :new
     end
   end
 
   def destroy
     idea = Idea.find(params[:id])
     idea.destroy
-    redirect_to root_path
+    flash[:alert] = 'アイデアを削除しました。'
+    redirect_to ideas_path
   end
 
   def search

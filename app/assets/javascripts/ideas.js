@@ -18,12 +18,4 @@ $(function() {
       searchMinus.hide();
     }
   });
-
-
-  // indexページ新着
-  let postsWrap = $('.posts-wrapper');
-  let path      = location.pathname
-  if(path === '/ideas') {
-    postsWrap.css('padding', '3rem 0 5rem');
-  };
 });

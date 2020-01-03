@@ -72,7 +72,10 @@
 = form_with url: comments_path, local: true, class: 'comment-box' do |f|
   .container.px-1
     %h2.comment-box__title コメントする
-    = f.text_area :content, class: 'comment-box__input'
+    %p.comment-box__error
+      = icon 'fas', 'exclamation-triangle'
+      500文字で入力して下さい。
+    = f.text_area :content, class: 'comment-box__input', placeholder: '※500文字以内'
     = f.number_field :idea_id, value: @idea.id, type: 'hidden'
     .comment-box__btn
       = f.submit 'コメントする', class: 'comment-box__btn--comment btn btn-accent'

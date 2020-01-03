@@ -55,7 +55,7 @@
         .card
           = link_to idea_path(idea.id), class: 'card__top' do
             .card__top--title
-              = idea.title
+              = truncate(idea.title, length: 13)
             .card__top--text
               = truncate(idea.content, length: 108)
             .card__top--time
@@ -84,7 +84,6 @@
                 = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
             .btn-box
               .btn-box__share-btn.btn-box__btn
-                = icon 'fas', 'share-alt'
               - if current_user.likes.find_by(idea_id: idea.id)
                 = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
                   = icon 'fas', 'heart', class: 'unlike'

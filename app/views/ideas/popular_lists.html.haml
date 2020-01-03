@@ -25,7 +25,7 @@
       SLIDE
       = image_tag '/assets/slide'
     .card-wrapper
-      - @popular_ideas.each do |idea|
+      - @popular_lists.each do |idea|
         .card
           = link_to idea_path(idea.id), class: 'card__top' do
             .card__top--title
