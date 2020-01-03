@@ -201,7 +201,7 @@
     height: 400px;
     &__top {
       &--title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
       &--text {
         font-size: 1rem;
@@ -224,6 +224,12 @@
   .flash-box {
     width: 90%;
     margin: 0 auto;
+  }
+
+  #error_explanation {
+    h2 {
+      font-size: 1.4rem;
+    }
   }
 
   //---------------------- Sidebar ---------------------------//

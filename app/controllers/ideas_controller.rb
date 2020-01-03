@@ -32,8 +32,13 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new(idea_params)
-    @idea.save
-    redirect_to root_path
+    if @idea.save
+      flash[:notice] = 'アイデアを投稿しました。'
+      redirect_to ideas_path
+    else
+      flash[:alert] = 'アイデアの投稿に失敗しました。'
+      redirect_to ideas_path
+    end
   end
 
   def destroy

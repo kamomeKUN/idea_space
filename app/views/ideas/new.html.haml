@@ -11,10 +11,10 @@
       = form_with model: @idea, local: true do |f|
         .form-section
           %h3 タイトル
-          = f.text_field :title
+          = f.text_field :title, placeholder: '※20文字以内'
         .form-section
           %h3 どんなアイデア？
-          = f.text_area :content
+          = f.text_area :content, placeholder: '※500文字以内'
         .form-section
           %h3 カテゴリ
           .form-section__select-wrap

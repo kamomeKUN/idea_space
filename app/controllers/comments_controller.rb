@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
-    comment.save
-    flash[:notice] = 'コメントを投稿しました。'
+    if comment.save
+      flash[:notice] = 'コメントを投稿しました。'
+    else
+      flash[:alert] = 'コメントの投稿に失敗しました。'
+    end
     redirect_to idea_path(params[:idea_id])
   end
 

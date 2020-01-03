@@ -1,5 +1,19 @@
 @import './variables';
 
+// エラーメッセージ
+#error_explanation {
+  margin-top: 1rem;
+  h2 {
+    color: $danger;
+  }
+  ul {
+    margin-top: 1rem;
+    li {
+      color: $danger;
+    }
+  }
+}
+
 // 投稿ボタン
 .post-btn {
   width: 100px;
