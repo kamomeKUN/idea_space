@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :popular_lists
       get :search
       get :what
+      get :terms
     end
   end
 

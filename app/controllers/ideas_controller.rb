@@ -82,7 +82,9 @@ class IdeasController < ApplicationController
 
 
   def what
+  end
 
+  def terms
   end
 
 

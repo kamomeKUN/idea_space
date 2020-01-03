@@ -7,6 +7,10 @@
             = icon 'fas', 'angle-right'
             ideaSpaceとは？
         %li
+          = link_to terms_ideas_path, class: 'footer-link' do
+            = icon 'fas', 'angle-right'
+            利用規約
+        %li
           = link_to 'https://yumanoblog.com/', class: 'footer-link', target: 'blank' do
             = icon 'fas', 'angle-right'
             製作者のブログ
@@ -25,7 +29,7 @@
               = icon 'fas', 'angle-right'
               ログイン
           %li
-            = link_to new_user_registration_path, class: 'footer-link' do
+            = link_to terms_ideas_path, class: 'footer-link' do
               = icon 'fas', 'angle-right'
               新規登録
 
