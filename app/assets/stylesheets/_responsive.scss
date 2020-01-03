@@ -133,6 +133,12 @@
     }
   }
 
+  .follow-list {
+    &__item {
+      width: 90%;
+    }
+  }
+
 }// End 1024px
 
 
@@ -171,9 +177,9 @@
     &__title {
       position: relative;
       letter-spacing: .2rem;
-      font-size: 2rem;
+      font-size: 1.6rem;
       .far, .fas, .fab {
-        font-size: 2.7rem;
+        font-size: 2rem;
       }
     }
   }
@@ -329,10 +335,10 @@
     width: 90%;
     li {
       .number {
-        font-size: .9rem;
+        font-size: 1rem;
       }
       p {
-        font-size: .9rem;
+        font-size: 1rem;
       }
       &:first-of-type {
         margin-left: .8rem;
@@ -341,6 +347,26 @@
   }
   .select-ng {
     padding: .5rem 0!important;
+  }
+
+  .follow-list {
+    margin: 2rem 0;
+    &__item {
+      padding: 0 .5rem;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+      border-bottom: 2px dashed $sub;
+      &--img {
+        width: 50px;
+        height: auto;
+      }
+      &--user-name {
+        font-size: 1rem;
+      }
+    }
   }
 
   //---------------------- Ideas#Show ---------------------------//

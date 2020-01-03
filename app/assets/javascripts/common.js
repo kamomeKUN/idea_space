@@ -33,15 +33,12 @@ $(function() {
     flashMessage.fadeOut();
   });
 
-  // カード
+  // カード色変更
   let categories = $('.card__other--category');
-
 
   categories.each(function(i, cat) {
     let cardTop = $(cat).closest('.card').find('.card__top');
     let catName = $(cat).text().trim();
-
-    console.log(catName)
     switch(catName) {
       case 'webサイト':
         $(cat).css('background', '#2196F3');

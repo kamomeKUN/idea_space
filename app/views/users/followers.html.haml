@@ -1,0 +1,78 @@
+.overlay
+// ヘッダー
+= render 'component/header'
+// サイドバー
+= render 'component/sidebar'
+
+.user-top
+  .container
+    .user-top__img-wrap
+      .likes-count
+        %p
+          = @likes_count
+        = icon 'far', 'heart'
+      - if current_user.id == @user.id
+        = image_tag @image, class: 'user-top__img-wrap--img'
+      - else
+        = image_tag @image
+    %h1
+      = @user.name
+      - if current_user.id == @user.id
+        = icon 'fas', 'edit', class: 'name-edit'
+      = render 'component/follow-button', user: @user
+    %ul.status-list
+      %li
+        .number
+          = @user.followings.count
+        = link_to follow_user_path(@user.id) do
+          %p#switch-follow フォロー
+      %li
+        .number
+          = @user.followers.count
+        = link_to followers_user_path(@user.id) do
+          %p#switch-followers フォロワー
+      %li
+        = link_to like_user_path(@user.id) do
+          %p#switch-like いいね
+
+= render 'component/name-edit'
+= render 'component/avatar-select'
+
+
+.container
+  = link_to user_path(@user.id), class: 'tab-back' do
+    = icon 'far', 'arrow-alt-circle-left'
+    %p 戻る
+.posts-wrapper.follow-wrapper.pt-0
+  .container
+    %h2.posts-wrapper__title.follow-wrapper__title
+      フォロワー
+    %ul.follow-list
+      - @followers_list.each do |follow|
+        %li.follow-list__item
+          = link_to user_path(follow.id) do
+            -case follow.avatar
+            -when 1 then
+              = image_tag 'hiyoko2.png', class: 'follow-list__item--img'
+            -when 2 then
+              = image_tag 'usagi.png', class: 'follow-list__item--img'
+            -when 3 then
+              = image_tag 'harinezumi.png', class: 'follow-list__item--img'
+            -when 4 then
+              = image_tag 'inu.png', class: 'follow-list__item--img'
+            -when 5 then
+              = image_tag 'neko.png', class: 'follow-list__item--img'
+            -when 6 then
+              = image_tag 'raion.png', class: 'follow-list__item--img'
+            -when 7 then
+              = image_tag 'shirokuma.png', class: 'follow-list__item--img'
+            -else
+              = image_tag 'hiyoko.png', class: 'follow-list__item--img'
+          = link_to user_path(follow.id) do
+            .follow-list__item--user-name
+              = follow.name
+    = paginate @followers_list
+
+
+// フッター
+= render 'component/footer'

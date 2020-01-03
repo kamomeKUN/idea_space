@@ -121,7 +121,6 @@
 }
 
 .like-posts-wrapper {
-  display: none;
   &__title {
     &:before {
       content: '';
@@ -141,9 +140,6 @@
       height: 2px;
       background: $black;
     }
-    .fa-heart {
-      font-size: 2.4rem!important;
-    }
   }
 }
 
@@ -152,6 +148,16 @@
   cursor: pointer;
   padding-top: 1rem;
   margin-left: 1rem;
+  .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+  }
+}
+.tab-back {
+  display: block;
+  padding-top: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  padding-top: 1rem;
   .fa-arrow-alt-circle-left {
     font-size: 2rem;
   }
@@ -262,6 +268,41 @@
     justify-content: space-around;
     align-items: center;
     width: 60%;
+  }
+}
+
+
+.follow-wrapper {
+  &__title {
+    .far, .fas, .fab {
+      font-size: 2.2rem;
+    }
+    &:before {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.follow-list {
+  margin: 2rem 0;
+  &__item {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 2px dashed $sub;
+    &--img {
+      width: 70px;
+      height: auto;
+    }
+    &--user-name {
+      font-size: 1.2rem;
+    }
   }
 }
 

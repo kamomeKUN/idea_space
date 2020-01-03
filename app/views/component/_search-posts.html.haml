@@ -42,10 +42,12 @@
               -else
                 = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
             .btn-box
-              .btn-box__share-btn.btn-box__btn
-                = icon 'fas', 'share-alt'
-              .btn-box__like-btn.btn-box__btn
-                = icon 'fas', 'heart'
+              - if current_user.likes.find_by(idea_id: idea.id)
+                = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                  = icon 'fas', 'heart', class: 'unlike'
+              - else
+                = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                  = icon 'fas', 'heart'
           .card__other
             .card__other--comments
               %p

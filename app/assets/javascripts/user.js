@@ -1,8 +1,4 @@
 $(function() {
-  let swichLike        = $('#swich-like');
-  let likePosts        = $('.like-posts-wrapper');
-  let myPosts          = $('.my-posts-wrapper');
-  let backLikePosts    = $('.back');
   let backAvatar       = $('.back-avatar');
   let overlay          = $('.overlay');
   let avatarWrap       = $('.avatar-wrapper');
@@ -10,20 +6,6 @@ $(function() {
   let nameEditBtn      = $('.name-edit');
   let editBox          = $('.edit-box');
   let editClose        = $('.edit-box__btn--close');
-
-  // タブ切り替え
-  swichLike.click(function() {
-    backLikePosts.show();
-    likePosts.show();
-    myPosts.hide();
-  })
-  backLikePosts.click(function() {
-    overlay.fadeOut();
-    backLikePosts.hide();
-    likePosts.hide();
-    myPosts.show();
-  })
-
 
   // アバター選択モーダル
   backAvatar.click(function() {

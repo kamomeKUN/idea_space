@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get :delete
     end
     member do
+      get   :follow
+      get   :followers
+      get   :like
       patch :avatar_update
     end
   end

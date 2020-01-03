@@ -24,19 +24,25 @@
       %li
         .number
           = @user.followings.count
-        %p フォロー
+        = link_to follow_user_path(@user.id) do
+          %p#switch-follow フォロー
       %li
         .number
           = @user.followers.count
-        %p フォロワー
+        = link_to followers_user_path(@user.id) do
+          %p#switch-followers フォロワー
       %li
-        %p#swich-like いいね
+        = link_to like_user_path(@user.id) do
+          %p#switch-like いいね
 
 = render 'component/name-edit'
 = render 'component/avatar-select'
 
+.container
+  .back
+    = icon 'far', 'arrow-alt-circle-left'
+    %p 戻る
 = render 'component/my-posts'
-= render 'component/like-posts'
 
 
 // フッター

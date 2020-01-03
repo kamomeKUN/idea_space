@@ -1,26 +1,52 @@
+.overlay
 // ヘッダー
 = render 'component/header'
 // サイドバー
 = render 'component/sidebar'
-
-.index-top
+.user-top
   .container
+    .user-top__img-wrap
+      .likes-count
+        %p
+          = @likes_count
+        = icon 'far', 'heart'
+      - if current_user.id == @user.id
+        = image_tag @image, class: 'user-top__img-wrap--img'
+      - else
+        = image_tag @image
     %h1
-      アイデアを投稿して、
-      %br
-      いいねをもらおう！
-    = link_to '投稿する', new_idea_path, class: 'btn btn-accent'
-    = image_tag '/assets/index-top'
+      = @user.name
+      - if current_user.id == @user.id
+        = icon 'fas', 'edit', class: 'name-edit'
+      = render 'component/follow-button', user: @user
+    %ul.status-list
+      %li
+        .number
+          = @user.followings.count
+        = link_to follow_user_path(@user.id) do
+          %p#switch-follow フォロー
+      %li
+        .number
+          = @user.followers.count
+        = link_to followers_user_path(@user.id) do
+          %p#switch-followers フォロワー
+      %li
+        = link_to like_user_path(@user.id) do
+          %p#switch-like いいね
 
-%main
-  .container.px-1
-    = render 'component/search-form'
+= render 'component/name-edit'
+= render 'component/avatar-select'
 
-.posts-wrapper.lists
+
+.container
+  = link_to user_path(@user.id), class: 'tab-back' do
+    = icon 'far', 'arrow-alt-circle-left'
+    %p 戻る
+.posts-wrapper.like-posts-wrapper.pt-1
   .container
-    %h2.posts-wrapper__title
-      = icon 'far', 'lightbulb'
-      新着アイデア
+    %h2.posts-wrapper__title.like-posts-wrapper__title
+      = icon 'far', 'heart'
+      いいねしたアイデア
     #slide
       SLIDE
       = image_tag '/assets/slide'
@@ -32,8 +58,11 @@
               = idea.title
             .card__top--text
               = truncate(idea.content, length: 108)
+            .card__top--time
+              = date_time(idea.created_at)
             .card__top--user-name
-              = "投稿者 : #{idea.user.name}"
+              = icon 'far', 'user-circle'
+              = idea.user.name
           .card__bottom
             = link_to user_path(idea.user_id) do
               -case idea.user.avatar
@@ -54,13 +83,14 @@
               -else
                 = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
             .btn-box
-              - if user_signed_in?
-                - if current_user.likes.find_by(idea_id: idea.id)
-                  = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
-                    = icon 'fas', 'heart', class: 'unlike'
-                - else
-                  = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
-                    = icon 'fas', 'heart'
+              .btn-box__share-btn.btn-box__btn
+                = icon 'fas', 'share-alt'
+              - if current_user.likes.find_by(idea_id: idea.id)
+                = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                  = icon 'fas', 'heart', class: 'unlike'
+              - else
+                = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                  = icon 'fas', 'heart'
           .card__other
             .card__other--comments
               %p
