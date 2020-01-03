@@ -1,12 +1,15 @@
 $(function() {
-  let swichLike  = $('#swich-like');
-  let likePosts  = $('.like-posts-wrapper');
-  let myPosts    = $('.my-posts-wrapper');
-  let backLikePosts       = $('.back');
-  let backAvatar = $('.back-avatar');
-  let overlay    = $('.overlay');
-  let avatarWrap = $('.avatar-wrapper');
-  let userImg    = $('.user-top__img-wrap--img');
+  let swichLike        = $('#swich-like');
+  let likePosts        = $('.like-posts-wrapper');
+  let myPosts          = $('.my-posts-wrapper');
+  let backLikePosts    = $('.back');
+  let backAvatar       = $('.back-avatar');
+  let overlay          = $('.overlay');
+  let avatarWrap       = $('.avatar-wrapper');
+  let userImg          = $('.user-top__img-wrap--img');
+  let nameEditBtn      = $('.name-edit');
+  let editBox          = $('.edit-box');
+  let editClose        = $('.edit-box__btn--close');
 
   // タブ切り替え
   swichLike.click(function() {
@@ -34,4 +37,16 @@ $(function() {
     avatarWrap.fadeIn();
     back.fadeIn();
   })
+
+
+  // ユーザーネーム変更
+  nameEditBtn.click(function() {
+    overlay.fadeIn();
+    editBox.fadeIn();
+  });
+  editClose.click(function() {
+    overlay.fadeOut();
+    editBox.fadeOut();
+  });
+
 });

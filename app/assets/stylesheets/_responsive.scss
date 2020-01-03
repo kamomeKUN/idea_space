@@ -110,7 +110,7 @@
   .idea-show {
     width: 100%!important;
   }
-  .comment-box {
+  .comment-box, .edit-box {
     &__input {
       width: 100%;
     }
@@ -344,9 +344,12 @@
   }
 
   //---------------------- Ideas#Show ---------------------------//
-  .comment-box {
+  .comment-box, .edit-box {
     &__btn {
       flex-flow: column;
+      .btn {
+        margin-top: 2rem;
+      }
     }
   }
   .comment-left {

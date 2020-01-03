@@ -1,0 +1,7 @@
+= form_with url: user_path, local: true, method: 'PATCH', class: 'edit-box' do |f|
+  .container.px-1
+    %h2.edit-box__title 名前を変更する
+    = f.text_field :name, class: 'edit-box__input', placeholder: '※10文字以下'
+    .edit-box__btn
+      = f.submit '変更する', class: 'edit-box__btn--edit btn btn-accent'
+      .edit-box__btn--close.btn.btn-sub 閉じる

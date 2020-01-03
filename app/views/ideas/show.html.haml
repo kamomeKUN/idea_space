@@ -67,46 +67,7 @@
         .card__other--category
           = @idea.category
 
-
-.comments-wrapper
-  .container.px-1
-    %h2
-      = icon 'far', 'comments'
-      コメント一覧
-    .comments-list
-      - @comments.each do |comment|
-        .comments-list__item
-          .comment-left
-            -case comment.user.avatar
-              -when 1 then
-                = image_tag 'hiyoko2.png', class: 'comment-left__user-icon'
-              -when 2 then
-                = image_tag 'usagi.png', class: 'comment-left__user-icon'
-              -when 3 then
-                = image_tag 'harinezumi.png', class: 'comment-left__user-icon'
-              -when 4 then
-                = image_tag 'inu.png', class: 'comment-left__user-icon'
-              -when 5 then
-                = image_tag 'neko.png', class: 'comment-left__user-icon'
-              -when 6 then
-                = image_tag 'raion.png', class: 'comment-left__user-icon'
-              -when 7 then
-                = image_tag 'shirokuma.png', class: 'comment-left__user-icon'
-              -else
-                = image_tag 'hiyoko.png', class: 'comment-left__user-icon'
-            .comment-left__user-name
-              = "#{comment.user.name}"
-          .comment-right
-            = comment.content
-          - if current_user.id == comment.user_id
-            .comments-list__item--other
-              = date_time(comment.created_at)
-              = link_to '削除する', comment_path(comment.id), method: 'DELETE'
-          - else
-            .comments-list__item--other
-              = date_time(comment.created_at)
-
-
+= render 'component/comments'
 
 = form_with url: comments_path, local: true, class: 'comment-box' do |f|
   .container.px-1
