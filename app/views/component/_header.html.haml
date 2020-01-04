@@ -5,7 +5,7 @@
       %span
       %span
     = link_to root_path do
-      = image_tag 'logo-light.png', class: 'header__logo'
+      = image_tag 'logo-light', class: 'header__logo'
     - if user_signed_in?
       = link_to current_user.name, user_path(current_user.id), class: 'header__inner--login header__inner--user-name'
       = link_to 'ログアウト', destroy_user_session_path, method: 'DELETE', class: 'header__inner--signup'
