@@ -10,57 +10,58 @@
       SLIDE
       = image_tag 'slide'
     .card-wrapper
-      - @ideas.each do |idea|
-        .card
-          = link_to idea_path(idea.id), class: 'card__top' do
-            .card__top--title
-              = truncate(idea.title, length: 13)
-            .card__top--text
-              = truncate(idea.content, length: 108)
-            .card__top--time
-              = date_time(idea.created_at)
-            .card__top--user-name
-              = icon 'far', 'user-circle'
-              = idea.user.name
-          .card__bottom
-            = link_to user_path(idea.user_id) do
-              -case idea.user.avatar
-              -when 1 then
-                = image_tag 'hiyoko2.png', class: 'card__bottom--user-icon'
-              -when 2 then
-                = image_tag 'usagi.png', class: 'card__bottom--user-icon'
-              -when 3 then
-                = image_tag 'harinezumi.png', class: 'card__bottom--user-icon'
-              -when 4 then
-                = image_tag 'inu.png', class: 'card__bottom--user-icon'
-              -when 5 then
-                = image_tag 'neko.png', class: 'card__bottom--user-icon'
-              -when 6 then
-                = image_tag 'raion.png', class: 'card__bottom--user-icon'
-              -when 7 then
-                = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
-              -else
-                = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
-            .btn-box
-              - if current_user.likes.find_by(idea_id: idea.id)
-                = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
-                  = icon 'fas', 'heart', class: 'unlike'
-              - else
-                = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
-                  = icon 'fas', 'heart'
-          .card__other
-            .card__other--comments
-              %p
-                = idea.comments.count
-              = icon 'fas', 'comments'
-            .card__other--likes
-              %p
-                = idea.likes.count
-              = icon 'fas', 'heart'
-            .card__other--category
-              = idea.category
+      - if @ideas
+        - @ideas.each do |idea|
+          .card
+            = link_to idea_path(idea.id), class: 'card__top' do
+              .card__top--title
+                = truncate(idea.title, length: 13)
+              .card__top--text
+                = truncate(idea.content, length: 108)
+              .card__top--time
+                = date_time(idea.created_at)
+              .card__top--user-name
+                = icon 'far', 'user-circle'
+                = idea.user.name
+            .card__bottom
+              = link_to user_path(idea.user_id) do
+                -case idea.user.avatar
+                -when 1 then
+                  = image_tag 'hiyoko2.png', class: 'card__bottom--user-icon'
+                -when 2 then
+                  = image_tag 'usagi.png', class: 'card__bottom--user-icon'
+                -when 3 then
+                  = image_tag 'harinezumi.png', class: 'card__bottom--user-icon'
+                -when 4 then
+                  = image_tag 'inu.png', class: 'card__bottom--user-icon'
+                -when 5 then
+                  = image_tag 'neko.png', class: 'card__bottom--user-icon'
+                -when 6 then
+                  = image_tag 'raion.png', class: 'card__bottom--user-icon'
+                -when 7 then
+                  = image_tag 'shirokuma.png', class: 'card__bottom--user-icon'
+                -else
+                  = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
+              .btn-box
+                - if current_user.likes.find_by(idea_id: idea.id)
+                  = link_to like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'DELETE' do
+                    = icon 'fas', 'heart', class: 'unlike'
+                - else
+                  = link_to like_like_path(idea.id), class: 'btn-box__like-btn btn-box__btn', method: 'POST' do
+                    = icon 'fas', 'heart'
+            .card__other
+              .card__other--comments
+                %p
+                  = idea.comments.count
+                = icon 'fas', 'comments'
+              .card__other--likes
+                %p
+                  = idea.likes.count
+                = icon 'fas', 'heart'
+              .card__other--category
+                = idea.category
 
-    = paginate @ideas
+        = paginate @ideas
 
     = link_to ideas_path do
       %button.btn.btn-accent
