@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def follow
     @user = User.find(params[:id])
-    @follow_list = @user.followings.page(params[:page]).per(1)
+    @follow_list = @user.followings.page(params[:page]).per(LIMIT)
     case @user.avatar
     when 1 then
       @image = 'hiyoko2.png'
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
   def followers
     @user = User.find(params[:id])
-    @followers_list = @user.followers.page(params[:page]).per(1)
+    @followers_list = @user.followers.page(params[:page]).per(LIMIT)
     case @user.avatar
     when 1 then
       @image = 'hiyoko2.png'
