@@ -39,7 +39,7 @@
             = image_tag 'hiyoko.png', class: 'card__bottom--user-icon'
         .btn-box
           - if user_signed_in?
-            - if current_user.id == @idea.user_id
+            - if current_user.id == @idea.user_id || current_user.name == 'ideaSpace'
               = link_to idea_path(@idea.id), class: 'btn-box__destroy-btn btn-box__btn', method: 'DELETE' do
                 = icon 'fas', 'trash'
             .btn-box__comment-btn.btn-box__btn
