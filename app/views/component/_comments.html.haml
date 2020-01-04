@@ -28,7 +28,7 @@
               .comment-left__user-name
                 = "#{comment.user.name}"
           .comment-right
-            = comment.content
+            = simple_format(comment.content)
           - if current_user.id == comment.user_id
             .comments-list__item--other
               = date_time(comment.created_at)
