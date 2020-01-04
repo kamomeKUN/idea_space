@@ -10,7 +10,7 @@
       %br
       いいねをもらおう！
     = link_to '投稿する', new_idea_path, class: 'btn btn-accent'
-    = image_tag '/assets/index-top'
+    = image_tag 'index-top'
 
 %main
   .container.px-1
@@ -23,7 +23,7 @@
       新着アイデア
     #slide
       SLIDE
-      = image_tag '/assets/slide'
+      = image_tag 'slide'
     .card-wrapper
       - @ideas.each do |idea|
         .card
