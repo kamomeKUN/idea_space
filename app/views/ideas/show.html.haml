@@ -12,7 +12,7 @@
         %h1.card__top--title
           = @idea.title
         .card__top--text.idea-show__top--text
-          = @idea.content
+          = safe_join(@idea.content.split("\n"),tag(:br))
           .card__top--time
             = date_time(@idea.created_at)
           .card__top--user-name

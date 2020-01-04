@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :authenticate_user!, only:[:search, :new_lists, :popular_lists, :new, :create, :destroy]
+  before_action :authenticate_user!, only:[:search, :new_lists, :popular_lists, :new, :create, :destroy, :show]
   before_action :set_categories, only:[:index, :new, :search, :new_lists, :popular_lists, :create]
   LIMIT = 6
 
