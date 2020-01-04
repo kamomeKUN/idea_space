@@ -1,73 +1,91 @@
 @import '../common/variables';
 .user-top {
-  text-align: center;
   padding: 180px 0 1rem;
   width: 100%;
   height: auto;
-  background: linear-gradient(to bottom, $sub, #5eaeff);;
+  background: -webkit-gradient(linear, left top, left bottom, from($sub), to(#5eaeff));
+  background: linear-gradient(to bottom, $sub, #5eaeff);
+  text-align: center;
   &__img-wrap {
     position: relative;
     img {
-      cursor: pointer;
-      border: 5px solid $accent;
       width: 200px;
       height: 200px;
+      border: 5px solid $accent;
       border-radius: 50%;
-      object-fit: cover;
+      cursor: pointer;
+
+      -o-object-fit: cover;
+         object-fit: cover;
     }
     .likes-count {
       position: absolute;
       top: -33%;
       left: 50%;
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       p {
         color: $white;
         font-size: 1.5rem;
       }
       .fa-heart {
-        margin-top: 0.3rem;
+        margin-top: .3rem;
         color: $white;
         font-size: 1.5rem;
       }
     }
   }
   h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin-top: 1rem;
-    font-size: 1.4rem;
     color: $white;
+    font-size: 1.4rem;
     .fas {
-      font-size: 1.5rem;
       margin-left: .3rem;
       color: $white;
+      font-size: 1.5rem;
     }
   }
 }
 .status-list {
-  width: 90%;
-  margin: 4rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
-  align-items: end;
+  margin: 4rem auto 0;
+  width: 90%;
   li {
     margin-right: 1.6rem;
     .number {
-      font-size: 1.2rem;
-      letter-spacing: 2px;
       color: $white;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
     }
     p {
-      cursor: pointer;
       margin-top: .5rem;
-      font-size: 1.4rem;
       color: $white;
-      transition: .3s;
+      font-size: 1.4rem;
+      cursor: pointer;
+      -webkit-transition: .3s;
+              transition: .3s;
       &:hover {
-        transition: .3s;
-        transform: translateY(-3px);
         text-shadow: 0 5px 5px $sub;
+        -webkit-transition: .3s;
+                transition: .3s;
+        -webkit-transform: translateY(-3px);
+                transform: translateY(-3px);
       }
     }
     &:last-child {
@@ -82,13 +100,14 @@
   padding: 7rem 0;
   text-align: center;
   #slide {
-    margin-top: 1.5rem;
     display: none;
+    margin-top: 1.5rem;
     img {
-      animation: Flashing 2s infinite linear;
       display: block;
       width: 250px;
       height: auto;
+      -webkit-animation: Flashing 2s infinite linear;
+              animation: Flashing 2s infinite linear;
     }
   }
   &__title {
@@ -99,106 +118,116 @@
       font-size: 3rem;
     }
     &:before {
-      content: '';
       position: absolute;
       top: 60%;
       left: .8rem;
       width: 300px;
       height: 2px;
       background: #333;
+      content: '';
     }
     &:after {
-      content: '';
       position: absolute;
       top: 60%;
       right: .8rem;
       width: 300px;
       height: 2px;
       background: #333;
+      content: '';
     }
   }
-
 }
 
 .like-posts-wrapper {
   &__title {
     &:before {
-      content: '';
       position: absolute;
       top: 60%;
       left: .8rem;
       width: 290px!important;
       height: 2px;
       background: $black;
+      content: '';
     }
     &:after {
-      content: '';
       position: absolute;
       top: 60%;
       right: .8rem;
       width: 290px!important;
       height: 2px;
       background: $black;
+      content: '';
     }
   }
 }
 
 .back {
   display: none;
-  cursor: pointer;
-  padding-top: 1rem;
   margin-left: 1rem;
+  padding-top: 1rem;
+  cursor: pointer;
   .fa-arrow-alt-circle-left {
     font-size: 2rem;
   }
 }
 .tab-back {
   display: block;
-  padding-top: 1rem;
   margin-left: 1rem;
-  cursor: pointer;
   padding-top: 1rem;
+  padding-top: 1rem;
+  cursor: pointer;
   .fa-arrow-alt-circle-left {
     font-size: 2rem;
   }
 }
 
 .avatar-wrapper {
-  display: none;
-  text-align: center;
-  z-index: 110;
   position: fixed;
   top: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  z-index: 110;
+  display: none;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   &__title {
     margin-right: 1rem;
     color: $white;
     .fa-arrow-alt-circle-left {
-      cursor: pointer;
       color: $white;
       font-size: 2rem;
+      cursor: pointer;
     }
   }
   &__slide {
-    animation: Flashing 2s infinite linear;
     margin-top: 2rem;
     width: 200px;
     height: auto;
+    -webkit-animation: Flashing 2s infinite linear;
+            animation: Flashing 2s infinite linear;
   }
 }
 .avatar-wrap {
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  overflow-x: scroll;
+  -webkit-box-align: center;
   align-items: center;
+  -ms-flex-align: center;
+  margin-top: 2rem;
+
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
   &__box {
-    padding: 3rem 0;
     position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+        flex: none;
+    padding: 3rem 0;
     width: 400px;
+
     scroll-snap-align: center;
-    flex: none;
     &--img {
       width: 200px;
       height: auto;
@@ -208,8 +237,9 @@
       position: absolute;
       top: 10px;
       left: 50%;
-      transform: translateX(-50%);
       color: $white;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       p {
         color: $white;
         font-size: 1.3rem;
@@ -219,36 +249,37 @@
       }
     }
     .select-ng {
-      width: 280px;
       padding: 1rem;
+      width: 280px;
       background: gray;
     }
   }
 }
 
 .follow-btn {
-  cursor: pointer;
+  outline: none;
+  border: none;
   background: none;
-	border: none;
-	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .name-edit {
   cursor: pointer;
 }
 .edit-box {
-  display: none;
-  text-align: center;
-  z-index: 110;
   position: fixed;
   top: 60px;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+  z-index: 110;
+  display: none;
   margin-top: 4rem;
+  text-align: center;
   &__title {
     color: white;
   }
@@ -261,20 +292,25 @@
     }
   }
   &__input {
-    resize: none;
     margin-top: 2rem;
-    font-size: 1.1rem;
     padding: .5rem 1rem;
-    border: 5px solid $main;
-    border-radius: 3px;
     width: 40%;
     height: auto;
+    border: 5px solid $main;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    resize: none;
   }
   &__btn {
-    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -webkit-box-align: center;
     align-items: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 0 auto;
     width: 60%;
   }
 }
@@ -297,12 +333,18 @@
 .follow-list {
   margin: 2rem 0;
   &__item {
-    padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
+    -webkit-box-align: center;
     align-items: center;
-    width: 60%;
+    -ms-flex-align: center;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
     margin: 0 auto;
+    padding: 0 1rem;
+    width: 60%;
     border-bottom: 2px dashed $sub;
     &--img {
       width: 70px;
@@ -311,6 +353,18 @@
     &--user-name {
       font-size: 1.2rem;
     }
+  }
+}
+
+@-webkit-keyframes Flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
