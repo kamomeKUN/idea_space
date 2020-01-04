@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: idea_space_production
-  username: idea_space
-  password: <%= ENV['IDEA_SPACE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
