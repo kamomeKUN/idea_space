@@ -22,7 +22,7 @@
 例えば、、、
 <br><br>
 「こんなサービスあったらいいな」
-<br><br><br>
+<br><br>
 「こんな商品があったら絶対に買う」
 <br><br>
 「こんな食べ物があったら売れると思う」
@@ -35,3 +35,9 @@
 <br><br>
 あなたのアイデアが誰かの目に留まって、実現されるかも...?
 
+
+## 👀Author
+- [Github](https://github.com/yuma11)
+- [Twitter](https://twitter.com/yuuuma_11)
+- [Blog](https://yumanoblog.com)
+- [Qiita](https://qiita.com/yuma11)
