@@ -42,6 +42,10 @@
 
 ![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
 
+<h3 align="center">- カテゴリー -</h3>
+<p align="center">アイデアのジャンルをカテゴリーから選ぶことができ、色分けされる</p>
+![category-color](https://user-images.githubusercontent.com/57032090/71777311-547f5700-2fe1-11ea-9bd6-d5a0494b5f69.gif)
+
 ## 👀 Author
 - [Github](https://github.com/yuma11)
 - [Twitter](https://twitter.com/yuuuma_11)
