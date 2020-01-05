@@ -37,13 +37,14 @@
 <br><br><br>
 
 ## 🔍 Features
-<h3 align="center">- アバター変更 -</h3>
+<h3 align="center">ー アバター変更 ー</h3>
 <p align="center">貰ったいいねの数に応じて、アバターが開放される機能</p>
 
 ![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
 
-<h3 align="center">- カテゴリー -</h3>
+<h3 align="center">ー カテゴリー ー</h3>
 <p align="center">アイデアのジャンルをカテゴリーから選ぶことができ、色分けされる</p>
+
 ![category-color](https://user-images.githubusercontent.com/57032090/71777311-547f5700-2fe1-11ea-9bd6-d5a0494b5f69.gif)
 
 ## 👀 Author
