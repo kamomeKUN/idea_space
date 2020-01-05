@@ -4,5 +4,6 @@
 
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/57032090/71776335-2d218d80-2fd3-11ea-98c6-dd23df2f7006.png">
+  <img width="80" alt="AWS" src="https://user-images.githubusercontent.com/57032090/71776335-2d218d80-2fd3-11ea-98c6-dd23df2f7006.png">
+  <img width="80" alt="Ruby on Rails" src="https://user-images.githubusercontent.com/57032090/71776416-b08fae80-2fd4-11ea-8457-bd98796209bb.png">
 </div>
