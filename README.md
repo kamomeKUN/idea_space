@@ -14,7 +14,7 @@
 
 ## 🌐 App URL
 ### **https://ideaspace-net.com/**  
-
+<br><br><br>
 
 ## 💬 What App?
 「ideaSpace」は、普段の生活の中で思いついたアイデアを、SNS感覚で気軽に「投稿」＆「共有」できるWEBサービスです。
@@ -34,7 +34,7 @@
 上記の例以外にも、ジャンルを問わずあなたが思いつくアイデアを是非投稿してみて下さい。
 <br><br>
 あなたのアイデアが誰かの目に留まって、実現されるかも...?
-
+<br><br><br>
 
 ## 👀Author
 - [Github](https://github.com/yuma11)
