@@ -1,2 +1,3 @@
-<img width="1440" alt="" src="https://user-images.githubusercontent.com/57032090/71775174-78ca3c00-2fbf-11ea-9eb6-b1ced7691d42.png">
+<img width="1440" alt="ideaSpace" src="https://user-images.githubusercontent.com/57032090/71776261-c059c380-2fd1-11ea-9287-98e5b6b86159.png">
 
+<h2 align="center">ideaSpace</h2>
