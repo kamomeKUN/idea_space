@@ -39,7 +39,8 @@
 ## 🔍 Features
 <h3 align="center">- アバター変更 -</h3>
 <p align="center">貰ったいいねの数に応じて、アバターが開放される機能</p>
-![avatarchange](https://user-images.githubusercontent.com/57032090/71776927-a7a2db00-2fdc-11ea-91cf-bb7d2ea2eada.gif)
+
+![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
 
 ## 👀 Author
 - [Github](https://github.com/yuma11)
