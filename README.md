@@ -36,6 +36,9 @@
 あなたのアイデアが誰かの目に留まって、実現されるかも...?
 <br><br><br>
 
+## 📝 DBdesign
+![ideaSpace](https://user-images.githubusercontent.com/57032090/71778626-90bbb300-2ff3-11ea-90dd-2698a86c794c.png)
+
 ## 🔍 Features
 <h3 align="center">ー レスポンシブ対応 ー</h3>
 <p align="center">スマホ、タブレットにも対応しており、スマホ画面ではユーザビリティを考慮して横スクロールで投稿を表示</p>
