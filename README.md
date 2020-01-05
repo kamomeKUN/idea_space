@@ -4,7 +4,7 @@
 
 
 <div align="center">
-  <img width="140" alt="Haml" src="https://user-images.githubusercontent.com/57032090/71776440-0bc1a100-2fd5-11ea-9fa2-a1b58764cff3.png">
+  <img width="140" alt="Haml" src="https://user-images.githubusercontent.com/57032090/71776574-44627a00-2fd7-11ea-94dd-e4b0b931951c.jpeg">
   <img width="100" alt="Sass" src="https://user-images.githubusercontent.com/57032090/71776454-4a575b80-2fd5-11ea-90e0-4be2e1ab0450.png">
   <img width="100" alt="jQuery" src="https://user-images.githubusercontent.com/57032090/71776496-fa2cc900-2fd5-11ea-903e-b3a3039937e3.png">
   <img width="90" alt="Ruby on Rails" src="https://user-images.githubusercontent.com/57032090/71776541-cf8f4000-2fd6-11ea-8f8f-9dc18bb77e1c.png">
