@@ -64,7 +64,7 @@
 ![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
 
 ## 🎫 License
-- [MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE) 
+- [Apache License 2.0](https://github.com/yuma11/idea_space/blob/master/LICENSE) 
 
 
 ## 👀 Author
