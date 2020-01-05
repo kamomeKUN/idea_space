@@ -57,6 +57,13 @@
 
 ![search](https://user-images.githubusercontent.com/57032090/71777373-50a00480-2fe2-11ea-95bd-dd598bb22728.gif)
 
+---
+
+<h3 align="center">ー レスポンシブ対応 ー</h3>
+<p align="center">スマホ、タブレットにも対応しており、スマホ画面ではユーザビリティを考慮して横スクロールで投稿を表示</p>
+
+![responsive](https://user-images.githubusercontent.com/57032090/71777424-066b5300-2fe3-11ea-99f4-4a865c46d260.gif)
+
 
 
 ## 👀 Author
