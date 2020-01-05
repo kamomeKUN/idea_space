@@ -43,6 +43,7 @@
 ![responsive](https://user-images.githubusercontent.com/57032090/71777424-066b5300-2fe3-11ea-99f4-4a865c46d260.gif)
 
 --- 
+<br><br><br>
 
 <h3 align="center">ー 検索機能 ー</h3>
 <p align="center">全投稿を「新着順」or「いいね順」or「コメント数順」＋「カテゴリー」で検索することが可能</p>
@@ -50,6 +51,7 @@
 ![search](https://user-images.githubusercontent.com/57032090/71777373-50a00480-2fe2-11ea-95bd-dd598bb22728.gif)
 
 ---
+<br><br><br>
 
 <h3 align="center">ー カテゴリ ー</h3>
 <p align="center">アイデアのジャンルをカテゴリーから選ぶことができ、色分けされる</p>
@@ -57,11 +59,13 @@
 ![category-color](https://user-images.githubusercontent.com/57032090/71777311-547f5700-2fe1-11ea-9bd6-d5a0494b5f69.gif)
 
 ---
+<br><br><br>
 
 <h3 align="center">ー アバター変更 ー</h3>
 <p align="center">貰ったいいねの数に応じて、アバターが開放される機能</p>
 
 ![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
+<br><br><br>
 
 
 ## 👀 Author
