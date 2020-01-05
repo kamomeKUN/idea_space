@@ -4,5 +4,5 @@
 
 
 <div align="center">
-  <a href="">![aws_logo_smile_1200x630](https://user-images.githubusercontent.com/57032090/71776335-2d218d80-2fd3-11ea-98c6-dd23df2f7006.png)</a>
+  <img src="https://user-images.githubusercontent.com/57032090/71776335-2d218d80-2fd3-11ea-98c6-dd23df2f7006.png">
 </div>
