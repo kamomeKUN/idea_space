@@ -37,6 +37,9 @@
 <br><br><br>
 
 ## 🔍 Features
+<h3 align="center">- アバター変更 -</h3>
+<p align="center">貰ったいいねの数に応じて、アバターが開放される機能</p>
+![AvatarChange](https://user-images.githubusercontent.com/57032090/71776902-55fa5080-2fdc-11ea-9161-0586bde90bff.gif)
 
 
 ## 👀 Author
