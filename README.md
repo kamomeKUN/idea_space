@@ -36,7 +36,9 @@
 あなたのアイデアが誰かの目に留まって、実現されるかも...?
 <br><br><br>
 
-## 👀Author
+## 🔍 Features
+
+## 👀 Author
 - [Github](https://github.com/yuma11)
 - [Twitter](https://twitter.com/yuuuma_11)
 - [Blog](https://yumanoblog.com)
