@@ -1,5 +1,6 @@
-@import "./common/variables";
+@import './common/variables';
 
+// -------------------------------------------------------- 1024px ----------------------------------------------------- //
 @media screen and (max-width: 1024px) {
   //---------------------- Header ---------------------------//
   .header__inner {
@@ -21,20 +22,22 @@
   //---------------------- Jumbotron ---------------------------//
   .jumbotron {
     &__inner {
-      height: 150px;
       width: 500px;
+      height: 150px;
       &--light {
         position: absolute;
         top: -17%;
         left: -7.5%;
         width: 90px;
         height: auto;
-        transform-origin: bottom;
-        animation: light 2.5s linear infinite;
+        -webkit-transform-origin: bottom;
+                transform-origin: bottom;
+        -webkit-animation: light 2.5s linear infinite;
+                animation: light 2.5s linear infinite;
       }
       &--logo-none {
-        width: 500px;
         top: 60%;
+        width: 500px;
       }
     }
     .lead {
@@ -45,33 +48,48 @@
       }
     }
   }
+
   //---------------------- Footer ---------------------------//
   .footer-top {
     width: 100%;
     height: auto;
     background: $main;
     .container {
-      flex-flow: column;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
       align-items: center;
+      -ms-flex-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
     }
     &__logo {
       display: none;
     }
     &__nav {
-      width: 100%;
-      font-size: .9rem;
-      margin-top: 0rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-flow: column;
+      -webkit-box-align: center;
       align-items: center;
+      -ms-flex-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      margin-top: 0rem;
+      width: 100%;
       text-align: center;
+      font-size: .9rem;
       li {
-        font-size: .8rem;
-        width: 100%;
         margin: 0;
         padding: 1rem 0;
+        width: 100%;
         border-bottom: 1px solid $white;
+        font-size: .8rem;
         &:last-of-type {
           border-bottom: none;
         }
@@ -119,8 +137,8 @@
     }
   }
   .comments-list {
-    width: 100%;
     margin: 2.5rem auto;
+    width: 100%;
     height: auto;
   }
 
@@ -138,22 +156,13 @@
       width: 90%;
     }
   }
-
 }// End 1024px
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+// -------------------------------------------------------- 500px ----------------------------------------------------- //
 @media screen and (max-width: 500px) {
   //---------------------- Common ---------------------------//
   .btn {
@@ -184,21 +193,28 @@
     }
   }
   .card-wrapper {
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vw);
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    overflow-x: scroll;
     margin: 1rem 0 0;
     padding: 2.5rem .8em .8rem;
+    -ms-scroll-snap-type: mandatory;
+        scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-y: repeat(100vw);
+        scroll-snap-points-y: repeat(100vw);
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
   }
-
   .card {
-    scroll-snap-align: center;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+        flex: none;
     margin-right: .8rem;
     width: calc(100vw - 1.6rem);
-    flex: none;
     height: 400px;
+
+    scroll-snap-align: center;
     &__top {
       &--title {
         font-size: 1.2rem;
@@ -210,7 +226,7 @@
     &__bottom {
       .btn-box {
         &__btn {
-          margin-right: 0.5rem;
+          margin-right: .5rem;
           width: 45px;
           height: 45px;
         }
@@ -220,18 +236,15 @@
       }
     }
   }
-
   .flash-box {
-    width: 90%;
     margin: 0 auto;
+    width: 90%;
   }
-
   #error_explanation {
     h2 {
       font-size: 1.4rem;
     }
   }
-
   .form-section {
     h3 {
       font-size: 1.3rem;
@@ -244,7 +257,8 @@
   //---------------------- Sidebar ---------------------------//
   .sidebar {
     width: 100vw;
-    transform: translateX(-100vw);
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
 
   //---------------------- Jumbotron ---------------------------//
@@ -258,12 +272,14 @@
         left: -5.3%;
         width: 60px;
         height: auto;
-        transform-origin: bottom;
-        animation: light 2.5s linear infinite;
+        -webkit-transform-origin: bottom;
+                transform-origin: bottom;
+        -webkit-animation: light 2.5s linear infinite;
+                animation: light 2.5s linear infinite;
       }
       &--logo-none {
-        width: 280px;
         top: 60%;
+        width: 280px;
       }
     }
     .lead {
@@ -298,9 +314,14 @@
     text-align: center;
   }
   .search-form {
-    margin-left: 1rem;
+    -webkit-box-align: center;
     align-items: center;
-    flex-flow: column;
+    -ms-flex-align: center;
+    -ms-flex-flow: column;
+        flex-flow: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    margin-left: 1rem;
     &__submit {
       margin: 1rem 1rem 0 0;
     }
@@ -308,31 +329,35 @@
 
   //---------------------- Users#Show ---------------------------//
   .user-top {
-    text-align: center;
     padding: 180px 0 1rem;
     width: 100%;
     height: auto;
-    background: linear-gradient(to bottom, $sub, #5eaeff);;
+    background: -webkit-gradient(linear, left top, left bottom, from($sub), to(#5eaeff));
+    background: linear-gradient(to bottom, $sub, #5eaeff);
+    text-align: center;;
     &__img-wrap {
       position: relative;
       img {
-        border: 5px solid $accent;
         width: 200px;
         height: 200px;
+        border: 5px solid $accent;
         border-radius: 50%;
-        object-fit: cover;
+
+        -o-object-fit: cover;
+           object-fit: cover;
       }
       .likes-count {
         position: absolute;
         top: -28%;
         left: 50%;
-        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
         p {
           color: $white;
           font-size: 1.2rem;
         }
         .fa-heart {
-          margin-top: 0.3rem;
+          margin-top: .3rem;
           color: $white;
           font-size: 1.2rem;
         }
@@ -357,16 +382,21 @@
   .select-ng {
     padding: .5rem 0!important;
   }
-
   .follow-list {
     margin: 2rem 0;
     &__item {
-      padding: 0 .5rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: left;
+      -webkit-box-align: center;
       align-items: center;
-      width: 90%;
+      -ms-flex-align: center;
+      -webkit-box-pack: left;
+      -ms-flex-pack: left;
+      justify-content: left;
       margin: 0 auto;
+      padding: 0 .5rem;
+      width: 90%;
       border-bottom: 2px dashed $sub;
       &--img {
         width: 50px;
@@ -381,18 +411,30 @@
   //---------------------- Ideas#Show ---------------------------//
   .comment-box, .edit-box {
     &__btn {
-      flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       .btn {
         margin-top: 2rem;
       }
     }
   }
   .comment-left {
-    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
-    flex-flow: column;
+    -ms-flex-align: center;
+    -ms-flex-flow: column;
+        flex-flow: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100px;
     &__user-icon {
       width: 50px;
       height: auto;
@@ -403,8 +445,8 @@
     }
   }
   .comment-right {
-    width: calc(100% - 100px);
     margin-left: .5rem;
+    width: calc(100% - 100px);
     font-size: .9rem;
   }
 
@@ -420,13 +462,18 @@
       }
     }
     .search-title {
-      margin-top: 5rem;
       display: block;
+      margin-top: 5rem;
     }
     .search-form {
-      margin-left: 1rem;
+      -webkit-box-align: center;
       align-items: center;
-      flex-flow: column;
+      -ms-flex-align: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      margin-left: 1rem;
       &__submit {
         margin: 1rem 1rem 0 0;
       }
@@ -448,5 +495,4 @@
       font-size: 1.2rem;
     }
   }
-
 }// End 500px

@@ -11,51 +11,51 @@
     display: none;
     color: $danger;
     .fa-exclamation-triangle {
-      color: $danger;
       margin-bottom: 1rem;
+      color: $danger;
     }
   }
   input, textarea, select {
-    width: 50%;
-    font-size: 1.1rem;
     padding: .5rem 1rem;
+    width: 50%;
     border: 1px solid #333;
     border-radius: 3px;
+    font-size: 1.1rem;
   }
   textarea {
     height: 300px;
   }
   input[type='submit'] {
-    line-height: 35px;
     display: inline-block;
-    width: 250px;
     padding: 1rem 3rem;
+    width: 250px;
     outline: none;
     border: none;
     border-radius: 40px;
+    background: linear-gradient(to right, $accent, #ffce3b);
     color: $white;
     font-size: 1.5rem;
+    line-height: 35px;
     cursor: pointer;
-    background: linear-gradient(to right, $accent, #ffce3b);
   }
   &__select-wrap {
-    width: 50%;
-    margin: 1rem 1rem 0 0;
     position: relative;
     display: inline-block;
+    margin: 1rem 1rem 0 0;
+    width: 50%;
     select {
       margin-left: .5rem;
       width: 100%;
-      cursor: pointer;
       outline: none;
+      cursor: pointer;
       -webkit-appearance: none;
-	    appearance: none;
+              appearance: none;
     }
     .fas {
-      font-size: 1.8rem;
+      position: absolute;
       top: 3px;
       right: 5px;
-      position: absolute;
+      font-size: 1.8rem;
     }
   }
 }

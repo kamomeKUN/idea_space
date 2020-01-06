@@ -16,43 +16,46 @@
 
 // 投稿ボタン
 .post-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
   width: 100px;
   height: 100px;
-  background: $main;
-  position: fixed;
   border-radius: 50%;
-  bottom: 10px;
-  right: 10px;
+  background: $main;
   .fa-lightbulb {
-    color: $white;
     position: fixed;
-    bottom: 35px;
     right: 43px;
+    bottom: 35px;
+    color: $white;
     font-size: 3rem;
   }
 }
 
 // ボタン
 .btn {
-  line-height: 35px;
   display: inline-block;
-  width: 250px;
   margin-top: 2rem;
   padding: 1rem 3rem;
+  width: 250px;
   outline: none;
   border: none;
   border-radius: 40px;
   color: $white;
   font-size: 1.5rem;
+  line-height: 35px;
   cursor: pointer;
 }
 .btn-accent {
+  background: -webkit-gradient(linear, left top, right top, from($accent), to(#ffce3b));
   background: linear-gradient(to right, $accent, #ffce3b);
 }
 .btn-sub {
+  background: -webkit-gradient(linear, left top, right top, from($sub), to(#4288cf));
   background: linear-gradient(to right, $sub, #4288cf);
 }
 .btn-danger {
+  background: -webkit-gradient(linear, left top, right top, from(#c0392b), to($danger));
   background: linear-gradient(to right, #c0392b, $danger);
 }
 
@@ -61,13 +64,14 @@
   padding: 7rem 0;
   text-align: center;
   #slide {
-    margin-top: 1.5rem;
     display: none;
+    margin-top: 1.5rem;
     img {
-      animation: Flashing 2s infinite linear;
       display: block;
       width: 250px;
       height: auto;
+      -webkit-animation: Flashing 2s infinite linear;
+              animation: Flashing 2s infinite linear;
     }
   }
   &__title {
@@ -78,54 +82,54 @@
       font-size: 3rem;
     }
     &:before {
-      content: '';
       position: absolute;
       top: 60%;
       left: .8rem;
       width: 350px;
       height: 2px;
       background: $black;
+      content: '';
     }
     &:after {
-      content: '';
       position: absolute;
       top: 60%;
       right: .8rem;
       width: 350px;
       height: 2px;
       background: $black;
+      content: '';
     }
   }
 }
 
 // サイト紹介、退会ページ
 .other-wrapper {
+  padding: 7rem 0 3rem;
+  height: auto;
   background: image-url('top');
   background-position: center;
-  height: auto;
-  padding: 7rem 0 3rem;
 }
 
 .other-box {
   margin: 0 auto;
-  border-radius: 3px;
-  border: 5px solid $sub;
-  text-align: center;
-  height: auto;
-  width: 100%;
-  background: $white;
   padding: 2rem 3rem;
+  width: 100%;
+  height: auto;
+  border: 5px solid $sub;
+  border-radius: 3px;
+  background: $white;
+  text-align: center;
   &__title {
-    border-bottom: 4px dotted $main;
     padding-bottom: 1rem;
+    border-bottom: 4px dotted $main;
   }
   &__description {
-    font-size: 1.1rem;
     margin-top: 2rem;
+    font-size: 1.1rem;
     line-height: 2rem;
     ul {
-      text-align: left;
       display: inline-block;
+      text-align: left;
       li {
         margin-top: 1rem;
       }
@@ -136,6 +140,18 @@
   }
 }
 
+
+@-webkit-keyframes Flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes Flashing {
   0% {

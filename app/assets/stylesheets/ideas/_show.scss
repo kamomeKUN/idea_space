@@ -3,13 +3,14 @@
   padding: 7rem 0 3rem;
   text-align: center;
   #slide {
-    margin-top: 1.5rem;
     display: none;
+    margin-top: 1.5rem;
     img {
-      animation: Flashing 2s infinite linear;
       display: block;
       width: 250px;
       height: auto;
+      -webkit-animation: Flashing 2s infinite linear;
+              animation: Flashing 2s infinite linear;
     }
   }
   &__title {
@@ -23,23 +24,26 @@
 }
 
 .idea-show {
-  width: 80%!important;
   margin: 1rem auto 0!important;
   min-height: 500px;
+  width: 80%!important;
   height: auto !important;
   height: 500px;
   &:hover {
-    box-shadow: 0 1px 5px #999;
-    transition: none;
-    transform: none;
+    -webkit-box-shadow: 0 1px 5px #999;
+            box-shadow: 0 1px 5px #999;
+    -webkit-transition: none;
+            transition: none;
+    -webkit-transform: none;
+            transform: none;
   }
   &__top {
-    padding: 10px 10px 30px;
-    word-break: break-all;
     position: relative;
+    padding: 10px 10px 30px;
     min-height: 400px;
     height: auto !important;
     height: 400px;
+    word-break: break-all;
     &--text {
       margin: 1rem 0;
     }
@@ -50,24 +54,24 @@
 }
 
 .overlay {
+  position: fixed;
+  z-index: 100;
   display: none;
   width: 100vw;
   height: 100vh;
-  position: fixed;
   background: rgba(0, 0, 0, .8);
-  z-index: 100;
 }
 
 .comment-box {
-  display: none;
-  text-align: center;
-  z-index: 110;
   position: fixed;
   top: 60px;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+  z-index: 110;
+  display: none;
   margin-top: 4rem;
+  text-align: center;
   &__title {
     color: white;
   }
@@ -80,20 +84,25 @@
     }
   }
   &__input {
-    resize: none;
     margin-top: 2rem;
-    font-size: 1.1rem;
     padding: .5rem 1rem;
-    border: 5px solid $main;
-    border-radius: 3px;
     width: 60%;
     height: 300px;
+    border: 5px solid $main;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    resize: none;
   }
   &__btn {
-    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -webkit-box-align: center;
     align-items: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 0 auto;
     width: 60%;
   }
 }
@@ -105,20 +114,26 @@
   }
 }
 .comments-list {
-  width: 77%;
   margin: 2.5rem auto;
+  width: 77%;
   height: auto;
   &__item {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
     padding: 1.4rem 0;
     border-bottom: 2px dashed $sub;
-    display: flex;
-    justify-content: left;
-    align-items: center;
     &--other {
       position: absolute;
-      bottom: 5px;
       right: 10px;
+      bottom: 5px;
       font-size: .8rem;
       > a {
         color: $danger;
@@ -127,11 +142,20 @@
   }
 }
 .comment-left {
-  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
-  flex-flow: column;
+  -ms-flex-align: center;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100px;
 
   &__user-icon {
     width: 60px;
@@ -142,8 +166,8 @@
   }
 }
 .comment-right {
-  line-height: 1.2rem;
-  width: calc(100% - 100px);
   margin-left: .5rem;
+  width: calc(100% - 100px);
   font-size: 1rem;
+  line-height: 1.2rem;
 }
