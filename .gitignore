@@ -27,4 +27,5 @@
 /config/master.key
 /config/credentials.yml.enc
 /public/uploads/
+/environments/db.env
 .env.dev
