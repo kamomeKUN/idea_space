@@ -16,6 +16,19 @@
 ### **https://ideaspace-net.com/**  
 <br><br><br>
 
+## 📗 Usage
+
+```
+$ git clone https://github.com/aocattleya/GroupChat-App.git
+$ cd GroupChat-App
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+👉http://localhost:3000/
+```
+<br><br><br>
+
 ## 💬 What App?
 「ideaSpace」は、普段の生活の中で思いついたアイデアを、SNS感覚で気軽に「投稿」＆「共有」できるWEBサービスです。
 <br><br><br>
