@@ -1,4 +1,4 @@
-<img width="1440" alt="ideaSpace" src="https://user-images.githubusercontent.com/57032090/71776261-c059c380-2fd1-11ea-9287-98e5b6b86159.png">
+<img width="1440" alt="ideaSpace" src="https://user-images.githubusercontent.com/57032090/72486018-f9552c00-384c-11ea-9a3c-62789ad86b3d.png">
 
 <h1 align="center">ideaSpace</h1>
 
