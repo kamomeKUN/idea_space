@@ -19,8 +19,8 @@
 ## 📗 Usage
 
 ```
-$ git clone https://github.com/aocattleya/GroupChat-App.git
-$ cd GroupChat-App
+$ git clone https://github.com/yuma11/idea_space.git
+$ cd idea_space
 $ bundle install
 $ rails db:create
 $ rails db:migrate
