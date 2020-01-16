@@ -55,6 +55,7 @@ $ rails s
 
 ## 📝 DBdesign
 ![ideaspace-er](https://user-images.githubusercontent.com/57032090/71778702-72a28280-2ff4-11ea-985d-7a7d2c767830.png)
+<br><br><br>
 
 ## 🔍 Features
 <h3 align="center">ー レスポンシブ対応 ー</h3>
@@ -82,9 +83,11 @@ $ rails s
 <p align="center">貰ったいいねの数に応じて、アバターが開放される機能</p>
 
 ![avatarchange](https://user-images.githubusercontent.com/57032090/71777112-f0f42a00-2fde-11ea-9d21-9eb174515d67.gif)
+<br><br><br>
 
 ## 🎫 License
 - [Apache License 2.0](https://github.com/yuma11/idea_space/blob/master/LICENSE) 
+<br><br><br>
 
 
 ## 👀 Author
